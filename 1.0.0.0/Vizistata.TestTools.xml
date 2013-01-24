@@ -1,0 +1,678 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vizistata.TestTools</name>
+    </assembly>
+    <members>
+        <member name="T:Vizistata.TestTools.CloneGenerator">
+            <summary>
+            Provides deep clone functionality.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.CloneGenerator.SerializeBinary``1(``0)">
+            <summary>
+            Creates a deep copy of an object using binary serialization.
+            </summary>
+            <typeparam name="T">The type of object.</typeparam>
+            <param name="instance">The object to clone.</param>
+            <returns>The deep copy.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is a null reference.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.Web.HttpContextProxy">
+            <summary>
+            Provides proxy access to an <see cref="T:HttpContext"/> object.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.Web.HttpContextProxy._context">
+            <summary>
+            The HTTP context for this instance.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.Web.HttpContextProxy._previousContext">
+            <summary>
+            The previous HTTP context that this one replaces.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.Web.HttpContextProxy._responseStream">
+            <summary>
+            The stream to which the response output is written.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.Web.HttpContextProxy._responseWriter">
+            <summary>
+            The writer for the response output.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpContextProxy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpContextProxy"/> class.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpContextProxy.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpContextProxy"/> class.
+            </summary>
+            <param name="fileName">The file name simulated in the request.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpContextProxy.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpContextProxy"/> class.
+            </summary>
+            <param name="fileName">The file name simulated in the request.</param>
+            <param name="queryString">The query string simulated in the request.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpContextProxy.ReleaseManagedResources">
+            <summary>
+            Disposes of any managed resources held by this instance.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpContextProxy.SetSessionState(System.Web.SessionState.IHttpSessionState)">
+            <summary>
+            Sets the session state container to use.
+            </summary>
+            <param name="container">The session state container to use.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="container"/> is a null reference.</exception>
+            <exception cref="T:System.ObjectDisposedException"><see cref="P:DisposableBase.IsDisposed"/> is <c>true</c>.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.Web.HttpContextProxy.Context">
+            <summary>
+            Gets the context simulated by this instance.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"><see cref="P:DisposableBase.IsDisposed"/> is <c>true</c>.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.NonSerializableType`1">
+            <summary>
+            Represents a non-serializable object.  This class may not be inherited.
+            </summary>
+            <typeparam name="T">The type of value contained.</typeparam>
+        </member>
+        <member name="F:Vizistata.TestTools.NonSerializableType`1._value">
+            <summary>
+            The actual value.  This field is read-only.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NonSerializableType&lt;T&gt;"/> class.
+            </summary>
+            <param name="value">The value to wrap.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the object specified.
+            </summary>
+            <param name="obj">The object to compare to this instance.</param>
+            <returns><c>true</c> if the object specified is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.Equals(Vizistata.TestTools.NonSerializableType{`0})">
+            <summary>
+            Returns a value indicating whether this instance is equal to the object specified.
+            </summary>
+            <param name="other">The object to compare to this instance.</param>
+            <returns><c>true</c> if the object specified is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.Equals(`0)">
+            <summary>
+            Returns a value indicating whether this instance is equal to the object specified.
+            </summary>
+            <param name="other">The object to compare to this instance.</param>
+            <returns><c>true</c> if the object specified is equal to this instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.GetHashCode">
+            <summary>
+            Returns the hash code value for this instance.
+            </summary>
+            <returns>The hash code value to use for this instance.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.ToString">
+            <summary>
+            Returns the string representation for this instance.
+            </summary>
+            <returns>The string representation of this instance.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.op_Explicit(Vizistata.TestTools.NonSerializableType{`0})~`0">
+            <summary>
+            Explicitly converts a <see cref="T:NonSerialiableType&lt;T&gt;"/> object to a <typeparamref name="T"/> object.
+            </summary>
+            <param name="instance">The object to convert.</param>
+            <returns>The converted object.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="instance"/> is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.NonSerializableType`1.op_Implicit(`0)~Vizistata.TestTools.NonSerializableType{`0}">
+            <summary>
+            Implicitly converts a <typeparamref name="T"/> object to a <see cref="T:NonSerialiableType&lt;T&gt;"/> object.
+            </summary>
+            <param name="value">The object to convert.</param>
+            <returns>The converted object.</returns>
+        </member>
+        <member name="P:Vizistata.TestTools.NonSerializableType`1.Value">
+            <summary>
+            Gets the value.
+            </summary>
+        </member>
+        <member name="T:Vizistata.TestTools.MockCommand">
+            <summary>
+            Represents a mock implementation of the <see cref="T:IDbCommand"/> interface.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockCommand._connection">
+            <summary>
+            The connection for this instance.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockCommand._transaction">
+            <summary>
+            The transaction for this instance.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockCommand"/> class.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.#ctor(Vizistata.TestTools.MockConnection)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockCommand"/> class.
+            </summary>
+            <param name="connection">The connection for this instance.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.Cancel">
+            <summary>
+            Cancels the current execution.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.CreateDbParameter">
+            <summary>
+            Creates a database parameter object.
+            </summary>
+            <returns>The database parameter object created.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.ExecuteDbDataReader(System.Data.CommandBehavior)">
+            <summary>
+            Executes this instance and returns an object that can read the database results.
+            </summary>
+            <param name="behavior">The behavior of the command.</param>
+            <returns>The object that can read the results.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.ExecuteNonQuery">
+            <summary>
+            Executes this instance as a non-query and returns the number of rows affected.
+            </summary>
+            <returns>The number of rows affected.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.ExecuteScalar">
+            <summary>
+            Executes this instance and returns the first value of the first row and column from the results.
+            </summary>
+            <returns>The value of the first row and column from the results.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.MockCommand.Prepare">
+            <summary>
+            Prepares this instance for execution.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.CommandText">
+            <summary>
+            Gets or sets the command text.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.CommandTimeout">
+            <summary>
+            Gets or sets the command timeout in seconds.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.CommandType">
+            <summary>
+            Gets or sets the type of command.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.DbConnection">
+            <summary>
+            Gets or sets the database connection.
+            </summary>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/> is not of type <see cref="T:MockConnection"/>.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.DbParameterCollection">
+            <summary>
+            Gets the collection of database parameters.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.DbTransaction">
+            <summary>
+            Gets or sets the database transaction.
+            </summary>
+            <exception cref="T:System.InvalidCastException"><paramref name="value"/> is not of type <see cref="T:MockTransaction"/>.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.DesignTimeVisible">
+            <summary>
+            Gets or sets a value indicating whether the component is visible at design time.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockCommand.UpdatedRowSource">
+            <summary>
+            Gets or sets the value that indicates how query command results are applied to the row being updated.
+            </summary>
+        </member>
+        <member name="T:Vizistata.TestTools.WriteOnlyStream">
+            <summary>
+            Represents a write-only memory stream.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.WriteOnlyStream._isDisposed">
+            <summary>
+            <c>true</c> if this instance has been disposed; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.WriteOnlyStream.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WriteOnlyStream"/> class.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.WriteOnlyStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous read operation.
+            </summary>
+            <param name="buffer">The buffer to read the data into.</param>
+            <param name="offset">The byte offset in buffer at which to begin writing data read from the stream.</param>
+            <param name="count">The maximum number of bytes to read.</param>
+            <param name="callback">An optional asynchronous callback, to be called when the read is complete.</param>
+            <param name="state">A user-provided object that distinguishes this particular asynchronous read request from other requests.</param>
+            <returns>An <see cref="T:IAsyncResult"/> that represents the asynchronous read, which could still be pending.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.WriteOnlyStream.Dispose(System.Boolean)">
+            <summary>
+            Disposes of any resources held by this instance.
+            </summary>
+            <param name="disposing"><c>true</c> if this method is called from the <see cref="M:IDisposable.Dispose"/> method; otherwise, <c>false</c>.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.WriteOnlyStream.Read(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
+            </summary>
+            <param name="buffer">An array of bytes.  When this method returns, the buffer contains the specified byte array with the values between offset and (offset + count - 1) replaced by the bytes read from the current source.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin storing the data read from the current stream.</param>
+            <param name="count">The maximum number of bytes to be read from the current stream.</param>
+            <returns>The total number of bytes read into the buffer.  This can be less than the number of bytes requested if that many bytes are not currently available, or zero (0) if the end of the stream has been reached.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.WriteOnlyStream.ReadByte">
+            <summary>
+            Reads a byte from the stream and advances the position within the stream by one byte, or returns -1 if at the end of the stream.
+            </summary>
+            <returns>The unsigned byte cast to an Int32, or -1 if at the end of the stream.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.WriteOnlyStream.ThrowIfDisposed">
+            <summary>
+            Throws an <see cref="T:System.ObjectDisposedException"/> if this instance is disposed.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.WriteOnlyStream.CanRead">
+            <summary>
+            Gets a value indicating if this instance supports reading.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.WriteOnlyStream.CanWrite">
+            <summary>
+            Gets a value indicating if this instance supports writing.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.WriteOnlyStream.ReadTimeout">
+            <summary>
+            Gets or sets the read timeout value.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.ReadOnlyStream">
+            <summary>
+            Represents a read-only memory stream.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.ReadOnlyStream._isDisposed">
+            <summary>
+            <c>true</c> if this instance has been disposed; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.ReadOnlyStream.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:ReadOnlyStream"/> class.
+            </summary>
+            <param name="buffer">The buffer to read.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.ReadOnlyStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <summary>
+            Begins an asynchronous write operation.
+            </summary>
+            <param name="buffer">The buffer to write data from.</param>
+            <param name="offset">The byte offset in buffer from which to begin writing.</param>
+            <param name="count">The maximum number of bytes to write.</param>
+            <param name="callback">An optional asynchronous callback, to be called when the write is complete.</param>
+            <param name="state">A user-provided object that distinguishes this particular asynchronous write request from other requests.</param>
+            <returns>An <see cref="T:IAsyncResult"/> that represents the asynchronous write, which could still be pending.</returns>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.ReadOnlyStream.Dispose(System.Boolean)">
+            <summary>
+            Disposes of any resources held by this instance.
+            </summary>
+            <param name="disposing"><c>true</c> if this method is called from the <see cref="M:IDisposable.Dispose"/> method; otherwise, <c>false</c>.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.ReadOnlyStream.ThrowIfDisposed">
+            <summary>
+            Throws an <see cref="T:System.ObjectDisposedException"/> if this instance is disposed.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.ReadOnlyStream.Write(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Writes a sequence of bytes to the current stream and advances the current position within this stream by the number of bytes written.
+            </summary>
+            <param name="buffer">An array of bytes.  This method copies count bytes from buffer to the current stream.</param>
+            <param name="offset">The zero-based byte offset in buffer at which to begin copying bytes to the current stream.</param>
+            <param name="count">The number of bytes to be written to the current stream.</param>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.ReadOnlyStream.WriteByte(System.Byte)">
+            <summary>
+            Writes a byte to the current position in the stream and advances the position within the stream by one byte.
+            </summary>
+            <param name="value">The byte to write to the stream.</param>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.ReadOnlyStream.CanRead">
+            <summary>
+            Gets a value indicating if this instance supports reading.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.ReadOnlyStream.CanWrite">
+            <summary>
+            Gets a value indicating if this instance supports writing.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">This instance has been disposed.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.ReadOnlyStream.WriteTimeout">
+            <summary>
+            Gets or sets the write timeout value.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Always thrown.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.RandomExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Random"/> class.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.RandomExtensions._alphanumericCharacters">
+            <summary>
+            The alphanumeric characters.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.RandomExtensions.NextString(System.Random)">
+            <summary>
+            Returns the next random string.
+            </summary>
+            <param name="random">The random object used to create the value.</param>
+            <returns>The random string that was generated.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="random"/> is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.RandomExtensions.NextAlphanumericCharacter(System.Random)">
+            <summary>
+            Returns the next random alpha-numeric character.
+            </summary>
+            <param name="random">The random object used to create the value.</param>
+            <returns>The random alpha-numeric character that was generated.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="random"/> is a null reference.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.MockConnection">
+            <summary>
+            Represents a mock object for the <see cref="T:IDbConnection"/> interface.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockConnection._connectionStringBuilder">
+            <summary>
+            Builds the connection string in this instance.  This field is read-only.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockConnection._state">
+            <summary>
+            The state of the connection.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockConnection"/> class.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockConnection"/> class.
+            </summary>
+            <param name="connectionString">The connection string to use.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockConnection"/> class.
+            </summary>
+            <param name="useOdbcRules"><c>true</c> to use {} to delimit fields; <c>false</c> to use quotation marks.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockConnection"/> class.
+            </summary>
+            <param name="connectionString">The connection string to use.</param>
+            <param name="useOdbcRules"><c>true</c> to use {} to delimit fields; <c>false</c> to use quotation marks.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.BeginDbTransaction(System.Data.IsolationLevel)">
+            <summary>
+            Begins a database transaction with the specified isolation level.
+            </summary>
+            <param name="isolationLevel">The isolation level for the transaction.</param>
+            <returns>The database transaction object created.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.ChangeDatabase(System.String)">
+            <summary>
+            Changes the database to which this instance is connected.
+            </summary>
+            <param name="databaseName">The name of the database.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.Close">
+            <summary>
+            Closes the connection if it is open.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.CreateDbCommand">
+            <summary>
+            Creates a database command object for this instnace.
+            </summary>
+            <returns>The database command object created.</returns>
+        </member>
+        <member name="M:Vizistata.TestTools.MockConnection.Open">
+            <summary>
+            Opens the connection if it is closed.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">This instance is not closed.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.MockConnection.ConnectionString">
+            <summary>
+            Gets or sets the connection string.
+            </summary>
+            <exception cref="T:System.ArgumentException">An invalid connection string argument has been supplied.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.MockConnection.ServerVersion">
+            <summary>
+            Gets the server version for the connection.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockConnection.State">
+            <summary>
+            Gets the state of the connection.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockConnection.DataSource">
+            <summary>
+            Gets the data source (or server) to which this instance is connected.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockConnection.Database">
+            <summary>
+            Gets the database to which this instance is connected.
+            </summary>
+        </member>
+        <member name="T:Vizistata.TestTools.MockTransaction">
+            <summary>
+            Represents a mock implementation of the <see cref="T:IDbTransaction"/> interface.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockTransaction._connection">
+            <summary>
+            The connection for this instance.  This field is read-only.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockTransaction._isCommitted">
+            <summary>
+            <c>true</c> if this instance has been committed; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockTransaction._isolationLevel">
+            <summary>
+            The isolation level of the transaction.  This field is read-only.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.MockTransaction._isRolledBack">
+            <summary>
+            <c>true</c> if this instance has been rolled back; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.MockTransaction.#ctor(Vizistata.TestTools.MockConnection,System.Data.IsolationLevel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:MockTransaction"/> class.
+            </summary>
+            <param name="connection">The connection for this instance.</param>
+            <param name="isolationLevel">The isolation level of the transaction.</param>
+        </member>
+        <member name="M:Vizistata.TestTools.MockTransaction.Commit">
+            <summary>
+            Commits any changes within this instance's scope.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">This instance has already been committed or rolled back.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.MockTransaction.Rollback">
+            <summary>
+            Reverts any changes within this instance's scope.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockTransaction.DbConnection">
+            <summary>
+            Gets the connection that created this instance.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.MockTransaction.IsolationLevel">
+            <summary>
+            Gets the isolation level of the transaction.
+            </summary>
+        </member>
+        <member name="T:Vizistata.TestTools.ExceptionHelper">
+            <summary>
+            Provides helper methods around exceptions.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.ExceptionHelper.AsThrown``1(``0)">
+            <summary>
+            Creates the exception as a thrown exception which adds a stack trace.
+            </summary>
+            <typeparam name="T">The type of exception to create.</typeparam>
+            <param name="exception">The exception to create as a thrown exception.</param>
+            <returns>A reference to the thrown exception created.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="exception"/> is a null reference.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.Web.HttpApplicationProxy">
+            <summary>
+            Represents a proxy that creates and emulates an <see cref="T:HttpApplication"/> object.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.Web.HttpApplicationProxy._application">
+            <summary>
+            The application object emulated.
+            </summary>
+        </member>
+        <member name="F:Vizistata.TestTools.Web.HttpApplicationProxy._events">
+            <summary>
+            The list of events for the application.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpApplicationProxy.#ctor(System.Web.HttpContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpApplicationProxy"/> class.
+            </summary>
+            <param name="context">The HTTP context for the application.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="context"/> is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpApplicationProxy.#ctor(System.Web.HttpContext,Vizistata.Pair{System.String,System.Web.IHttpModule}[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:HttpApplicationProxy"/> class.
+            </summary>
+            <param name="context">The HTTP context for the application.</param>
+            <param name="namedHttpModules">The optional array of named HTTP modules to add to the application.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="context"/> is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpApplicationProxy.RaiseAuthenticateRequest">
+            <summary>
+            Raises the <see cref="E:HttpApplication.AuthenticateRequest"/> event.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"><see cref="P:DisposableBase.IsDisposed"/> is <c>true</c>.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpApplicationProxy.RaiseEndRequest">
+            <summary>
+            Raises the <see cref="E:HttpApplication.EndRequest"/> event.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"><see cref="P:DisposableBase.IsDisposed"/> is <c>true</c>.</exception>
+        </member>
+        <member name="M:Vizistata.TestTools.Web.HttpApplicationProxy.ReleaseManagedResources">
+            <summary>
+            Releases any resources held by this instance.
+            </summary>
+        </member>
+        <member name="P:Vizistata.TestTools.Web.HttpApplicationProxy.Application">
+            <summary>
+            Gets the actual application object emulated.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"><see cref="P:DisposableBase.IsDisposed"/> is <c>true</c>.</exception>
+        </member>
+        <member name="P:Vizistata.TestTools.Web.HttpApplicationProxy.Events">
+            <summary>
+            Gets the list of events for the application.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"><see cref="P:DisposableBase.IsDisposed"/> is <c>true</c>.</exception>
+        </member>
+        <member name="T:Vizistata.TestTools.ExceptionFactory`1">
+            <summary>
+            Used to create exceptions.  This class may not be inherited.
+            </summary>
+            <typeparam name="T">The type of exception to create.</typeparam>
+        </member>
+        <member name="M:Vizistata.TestTools.ExceptionFactory`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:ExceptionFactory&lt;T&gt;"/> class.
+            </summary>
+        </member>
+        <member name="M:Vizistata.TestTools.ExceptionFactory`1.CreateInstance(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Creates and returns an instance of the exceptions represented by this type.
+            </summary>
+            <param name="info">Contains the data needed to create the exception.</param>
+            <param name="context">Describes the source and destination of the deserialization.</param>
+            <returns>A reference to the exception created.</returns>
+        </member>
+    </members>
+</doc>

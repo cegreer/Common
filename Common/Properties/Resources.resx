@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnInstance" xml:space="preserve">
+    <value>an instance</value>
+  </data>
+  <data name="ArgumentLengthDoesNotMatchTypeLengthMessage" xml:space="preserve">
+    <value>The length of the arguments must match the length of the types.</value>
+  </data>
+  <data name="AStatic" xml:space="preserve">
+    <value>a static</value>
+  </data>
+  <data name="AttributeMissingFormat" xml:space="preserve">
+    <value>The '{0}' attribute is missing or empty.</value>
+  </data>
+  <data name="CollectionContainsElementWithInvalidCharactersMessage" xml:space="preserve">
+    <value>One of the nodes in the path contains invalid characters.</value>
+  </data>
+  <data name="CollectionContainsEmptyStringBeforeLastElementMessage" xml:space="preserve">
+    <value>One of the nodes other than the last node in the path specified is an empty string.</value>
+  </data>
+  <data name="CollectionContainsNullReferenceMessage" xml:space="preserve">
+    <value>The collection specified contains a null reference.  Null references are not allowed.</value>
+  </data>
+  <data name="CollectionMayNotBeEmptyMessage" xml:space="preserve">
+    <value>The collection is empty.  It must contain at least 1 element.</value>
+  </data>
+  <data name="ConfigurationSectionTypeNotKnownMessage" xml:space="preserve">
+    <value>The configuration section type specified is not known.</value>
+  </data>
+  <data name="ConstructorNotFoundMessage" xml:space="preserve">
+    <value>A constructor matching the arguments specified could not be found.</value>
+  </data>
+  <data name="DefaultTraceListenerSubjectFormat" xml:space="preserve">
+    <value>{0} trace log as of {1} at {2}</value>
+  </data>
+  <data name="EmailAddressDomainContainsConsecutiveDotsMessage" xml:space="preserve">
+    <value>The domain of an e-mail address may not have two consecutive dots or periods.</value>
+  </data>
+  <data name="EmailAddressDomainEndsWithDotMessage" xml:space="preserve">
+    <value>The domain of an e-mail address may not end with a dot or period.</value>
+  </data>
+  <data name="EmailAddressDomainLengthInvalidMessage" xml:space="preserve">
+    <value>The length of the e-mail address's domain must be between 1 and 253 characters.</value>
+  </data>
+  <data name="EmailAddressDomainPartInvalidCharactersMessage" xml:space="preserve">
+    <value>The domain of the e-mail address contains one more more characters not defined by HealthGrades.EmailAddress.GetValidDomainCharacters().</value>
+  </data>
+  <data name="EmailAddressDomainStartsWithDotMessage" xml:space="preserve">
+    <value>The domain of an e-mail address may not start with a dot or period.</value>
+  </data>
+  <data name="EmailAddressHasTooManyPartsMessage" xml:space="preserve">
+    <value>An e-mail address must have exactly one @ symbol.</value>
+  </data>
+  <data name="EmailAddressLocalPartAndDomainTooLongMessage" xml:space="preserve">
+    <value>When combined with the domain, the local-part and domain cannot exceed 254 characters.</value>
+  </data>
+  <data name="EmailAddressLocalPartContainsConsecutiveDotsMessage" xml:space="preserve">
+    <value>The local-part of an e-mail address may not have two consecutive dots or periods.</value>
+  </data>
+  <data name="EmailAddressLocalPartEndsWithDotMessage" xml:space="preserve">
+    <value>The local-part of an e-mail address may not end with a dot or period.</value>
+  </data>
+  <data name="EmailAddressLocalPartInvalidCharactersMessage" xml:space="preserve">
+    <value>The local-part of the e-mail address contains one more more characters not defined by HealthGrades.EmailAddress.GetValidLocalPartCharacters().</value>
+  </data>
+  <data name="EmailAddressLocalPartLengthInvalidMessage" xml:space="preserve">
+    <value>The length of the e-mail address's local-part must be between 1 and 64 characters.</value>
+  </data>
+  <data name="EmailAddressLocalPartStartsWithDotMessage" xml:space="preserve">
+    <value>The local-part of an e-mail address may not start with a dot or period.</value>
+  </data>
+  <data name="EventLogTraceListenerLoggingErrorMessage" xml:space="preserve">
+    <value>The listener did not log to an event log.  Check that the event log exists and that the application has permission to access the event log.</value>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value>field</value>
+  </data>
+  <data name="FileNameContainsInvalidFileNameCharactersMessage" xml:space="preserve">
+    <value>A file name may not have any characters as defined by Path.GetInvalidFileNameChars().</value>
+  </data>
+  <data name="FileNameContainsInvalidPathCharactersMessage" xml:space="preserve">
+    <value>A file name may not have any characters as defined by Path.GetInvalidPathChars().</value>
+  </data>
+  <data name="FromAddressAttributeInvalidPrefix" xml:space="preserve">
+    <value>The 'fromAddress' attribute has a value that is not a valid e-mail address: </value>
+  </data>
+  <data name="InputStreamNotReadableMessage" xml:space="preserve">
+    <value>The input stream is not readable.</value>
+  </data>
+  <data name="IsBodyHtmlAttributeInvalidMessage" xml:space="preserve">
+    <value>The 'isBodyHtml' attribute has a value that could not be parsed as a boolean.</value>
+  </data>
+  <data name="KeyExistsInQueryMessage" xml:space="preserve">
+    <value>The key specified already exists in the query.</value>
+  </data>
+  <data name="LackOfSeparatorPreventsInferrenceMessage" xml:space="preserve">
+    <value>The separator could not be inferred because no valid separator exists in the path.</value>
+  </data>
+  <data name="ListenerLoadErrorFormat" xml:space="preserve">
+    <value>A listener ({0}) could not be loaded for the following reason: {1}{2}See the inner exception for more details.</value>
+  </data>
+  <data name="ListenerTypeInvalidFormat" xml:space="preserve">
+    <value>The type specified ({0}) for the listener ({1}) is not valid or does not derive from {2}.</value>
+  </data>
+  <data name="ListenerTypeMissingFormat" xml:space="preserve">
+    <value>No type was specified for the listener ({0}).</value>
+  </data>
+  <data name="MemberNotOnTypeFormat" xml:space="preserve">
+    <value>The field specified {0} does not exist on the type as {1} {2}.</value>
+  </data>
+  <data name="MessageQueueIsNotWriteableMessage" xml:space="preserve">
+    <value>The message queue is not available for writing.  Only writeable message queues may be used.</value>
+  </data>
+  <data name="MethodNotFoundMessage" xml:space="preserve">
+    <value>A method matching the arguments specified could not be found.</value>
+  </data>
+  <data name="MsmqPathInvalidPrefix" xml:space="preserve">
+    <value>The 'path' attribute has a value that does not point to a valid MSMQ queue: </value>
+  </data>
+  <data name="MultipleSeparatorsPreventsInferrenceMessage" xml:space="preserve">
+    <value>The separator could not be inferred because multiple valid separators exist in the path.</value>
+  </data>
+  <data name="NoTraceListenersInConfigFileMessage" xml:space="preserve">
+    <value>No trace listeners other than the default exist within the current configuration.</value>
+  </data>
+  <data name="OutputStreamNotWriteableMessage" xml:space="preserve">
+    <value>The output stream is not writeable.</value>
+  </data>
+  <data name="PathContainsInvalidCharactersMessage" xml:space="preserve">
+    <value>The path contains invalid characters.</value>
+  </data>
+  <data name="PathForTypeAlreadyKnownMessage" xml:space="preserve">
+    <value>The path for the type specified is already known.</value>
+  </data>
+  <data name="PhoneNumberAreaCodeLengthInvalidMessage" xml:space="preserve">
+    <value>The area code must contain exactly three letters and/or numbers.</value>
+  </data>
+  <data name="PhoneNumberContainsInvalidCharactersMessage" xml:space="preserve">
+    <value>A phone number may only contain letters and numbers.</value>
+  </data>
+  <data name="PhoneNumberCountryCodeInvalidMessage" xml:space="preserve">
+    <value>The country code must be a valid number for a country.</value>
+  </data>
+  <data name="PhoneNumberSubscriberGroupsContainsNullMessage" xml:space="preserve">
+    <value>The subscriber groups may not contain a null reference.</value>
+  </data>
+  <data name="PhoneNumberSubscriberGroupsDigitsLengthInvalidMessage" xml:space="preserve">
+    <value>The total number of digits in the subscriber groups must be at least 7 and must not be greater that 15.</value>
+  </data>
+  <data name="PhoneNumberSubscriberGroupsInvalidLengthMessage" xml:space="preserve">
+    <value>There must be at least one subscriber number group.</value>
+  </data>
+  <data name="PhoneNumberSupportsUSOnly" xml:space="preserve">
+    <value>Currently, only the United States of America (1) is supported.</value>
+  </data>
+  <data name="PhoneNumberUnitedStatesNumberHasInvalidLengthMessage" xml:space="preserve">
+    <value>A United States phone number must contain at least 10 digits.</value>
+  </data>
+  <data name="Property" xml:space="preserve">
+    <value>property</value>
+  </data>
+  <data name="ProviderInvalidFormat" xml:space="preserve">
+    <value>The {0} configuration is invalid:</value>
+  </data>
+  <data name="ProviderTypeIncorrectFormat" xml:space="preserve">
+    <value>The provider specified is not of the type {0}.</value>
+  </data>
+  <data name="SeparatorNotSupportedMessage" xml:space="preserve">
+    <value>The path contains a separator that is not supported by this instance.</value>
+  </data>
+  <data name="SeparatorNotValidMessage" xml:space="preserve">
+    <value>The separator specified is not valid.</value>
+  </data>
+  <data name="StringMayNotBeEmptyMessage" xml:space="preserve">
+    <value>The value contains 0 characters.  It must contain at least one character.</value>
+  </data>
+  <data name="TextWriterTraceListenerLoggingErrorMessage" xml:space="preserve">
+    <value>The listener did not log to a text file.  Check the path to the file exists and that the application has permission to create/modify files in that directory.</value>
+  </data>
+  <data name="ToAddressesAttributeInvalidPrefix" xml:space="preserve">
+    <value>The 'toAddresses' attribute has a value that does not contain valid e-mail addresses: </value>
+  </data>
+  <data name="TrimmedValueIsEmptyMessage" xml:space="preserve">
+    <value>The value specified is empty or contains only white-space characters.  At least one non-white-space character is required.</value>
+  </data>
+  <data name="TypeMayNotBeAbstractMessage" xml:space="preserve">
+    <value>The type specified is abstract.  Abstract types are not allowed.</value>
+  </data>
+  <data name="TypeNeedsToHaveSpecificBaseClassFormat" xml:space="preserve">
+    <value>The type does not derive from {0}.  Only types that derive from {0} are allowed.</value>
+  </data>
+  <data name="ValueIsEmptyMessage" xml:space="preserve">
+    <value>The value specified is empty.  Empty value are not allowed.</value>
+  </data>
+  <data name="ValueLengthExceededFormat" xml:space="preserve">
+    <value>The length of the value specified exceeds the maximum length of {0}.</value>
+  </data>
+  <data name="DomainLabelIsEmptyMessage" xml:space="preserve">
+    <value>Each domain label must contain at least one character.</value>
+  </data>
+  <data name="DomainNameHasTooFewLabelsMessage" xml:space="preserve">
+    <value>Both of the first-level domain label and second-level domain label are required.  One or both is not specified in the value provided.</value>
+  </data>
+  <data name="DomainNameHasTooManyLabelsMessage" xml:space="preserve">
+    <value>The number of labels for a domain name is limited to 127.  There are too many sub-domain labels provided.</value>
+  </data>
+  <data name="DomainNameLengthTooLargeMessage" xml:space="preserve">
+    <value>The number of characters for the domain name exceeds 253.</value>
+  </data>
+  <data name="InvalidCharacterAtSpecifiedPositionFormat" xml:space="preserve">
+    <value>A character ({0}) was found at position {1} that is invalid.</value>
+  </data>
+  <data name="PerformanceLoggingScopeFinishFormat" xml:space="preserve">
+    <value>Performance scope '{0}.{1}' ended at {2} with a duration of {3}.</value>
+  </data>
+  <data name="PerformanceLoggingScopeStartFormat" xml:space="preserve">
+    <value>Performance scope '{0}.{1}' started at {2}.</value>
+  </data>
+  <data name="PropertyIsReadOnlyMessage" xml:space="preserve">
+    <value>The property is read-only.</value>
+  </data>
+  <data name="PropertyIsWriteOnlyMessage" xml:space="preserve">
+    <value>The property is write-only.</value>
+  </data>
+  <data name="FieldIsReadOnlyMessage" xml:space="preserve">
+    <value>The field is read-only.</value>
+  </data>
+</root>

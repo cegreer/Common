@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vizistata.ServiceModel</name>
+    </assembly>
+    <members>
+        <member name="T:Vizistata.ServiceModel.Response">
+            <summary>
+            Represents a strongly-typed response from a service call.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.Response._error">
+            <summary>
+            The error that occurred, or a null reference.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.Response._isSuccessful">
+            <summary>
+            <c>true</c> if the operation was successful; otherwise, <c>false</c>.
+            </summary>
+        </member>
+        <member name="M:Vizistata.ServiceModel.Response.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Response"/> class as a successful response.
+            </summary>
+        </member>
+        <member name="M:Vizistata.ServiceModel.Response.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Response"/> class as a failure response.
+            </summary>
+            <param name="exception">The error that occurred</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="exception"/> is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.ServiceModel.Response.#ctor(Vizistata.ServiceModel.ServiceError)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Response"/> class as a failure response.
+            </summary>
+            <param name="error">The error that occurred.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="error"/>is a null reference.</exception>
+        </member>
+        <member name="P:Vizistata.ServiceModel.Response.Error">
+            <summary>
+            Gets the error that occurred, or a null reference if <see cref="P:IsSuccessful"/> is <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Vizistata.ServiceModel.Response.IsSuccessful">
+            <summary>
+            Gets a value indicating if this instance represents a successful response.
+            </summary>
+        </member>
+        <member name="T:Vizistata.ServiceModel.ServiceError">
+            <summary>
+            Represents an error that occurs during a service call.  This class may not be inherited.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._className">
+            <summary>
+            The name of the class for the exception.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._data">
+            <summary>
+            Contains the collection of data from the exception.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._hResult">
+            <summary>
+            The HResults of the exception.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._innerError">
+            <summary>
+            The inner error, or a null reference.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._message">
+            <summary>
+            The exception message.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._stackTrace">
+            <summary>
+            The stack trace for the exception.
+            </summary>
+        </member>
+        <member name="F:Vizistata.ServiceModel.ServiceError._typeName">
+            <summary>
+            The full type name of the exception.
+            </summary>
+        </member>
+        <member name="M:Vizistata.ServiceModel.ServiceError.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ServiceError"/> class.
+            </summary>
+            <param name="exception">The exception to wrap.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="exception"/> is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.ServiceModel.ServiceError.ToException">
+            <summary>
+            Returns the <see cref="T:Exception"/> represented by this instance.
+            </summary>
+            <returns>The <see cref="T:Exception"/> represented by this instance.</returns>
+        </member>
+        <member name="P:Vizistata.ServiceModel.ServiceError.Data">
+            <summary>
+            Gets the collection key/value pairs taht provide additional user-defined information about the error.
+            </summary>
+        </member>
+        <member name="P:Vizistata.ServiceModel.ServiceError.InnerError">
+            <summary>
+            Gets the <see cref="T:Error"/> that caused the current error.
+            </summary>
+        </member>
+        <member name="P:Vizistata.ServiceModel.ServiceError.Message">
+            <summary>
+            Gets a message that describes the current error.
+            </summary>
+        </member>
+        <member name="P:Vizistata.ServiceModel.ServiceError.StackTrace">
+            <summary>
+            Gets a string representation of the immediate frames on the call stack.
+            </summary>
+        </member>
+        <member name="P:Vizistata.ServiceModel.ServiceError.TypeName">
+            <summary>
+            Gets the fully qualified name of the <see cref="T:Type"/>, including the namespace of the <see cref="T:Type"/> but not the assembly.
+            </summary>
+        </member>
+        <member name="T:Vizistata.ServiceModel.Response`1">
+            <summary>
+            A strongly-typed response used for service calls that return values.  This class may not be inherited.
+            </summary>
+            <typeparam name="T">The type of value to return.</typeparam>
+        </member>
+        <member name="F:Vizistata.ServiceModel.Response`1._returnValue">
+            <summary>
+            The return value.
+            </summary>
+        </member>
+        <member name="M:Vizistata.ServiceModel.Response`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Response&lt;T&gt;"/> class as a successful response.
+            </summary>
+            <param name="returnValue">The return value of the service call.</param>
+        </member>
+        <member name="M:Vizistata.ServiceModel.Response`1.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Response&lt;T&gt;"/> class as a failure response.
+            </summary>
+            <param name="exception">The error that occurred.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="exception"/>is a null reference.</exception>
+        </member>
+        <member name="M:Vizistata.ServiceModel.Response`1.#ctor(Vizistata.ServiceModel.ServiceError)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Response&lt;T&gt;"/> class as a failure response.
+            </summary>
+            <param name="error">The error that occurred.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="error"/>is a null reference.</exception>
+        </member>
+        <member name="P:Vizistata.ServiceModel.Response`1.ReturnValue">
+            <summary>
+            Gets the return value from the service call.
+            </summary>
+        </member>
+    </members>
+</doc>

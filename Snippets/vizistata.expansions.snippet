@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Equals and GetHashCode</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Overrides the Equals and GetHashCode methods.</Description>
+			<Keywords>
+				<Keyword>Object</Keyword>
+				<Keyword>Equals</Keyword>
+				<Keyword>GetHashCode</Keyword>
+				<Keyword>override</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Imports>
+				<Import>
+					<Namespace><![CDATA[System]]></Namespace>
+				</Import>
+			</Imports>
+			<Declarations>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyClass</Default>
+					<ToolTip>Enter the name of the class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[
+		/// <summary>
+		/// Determines whether the object specified is equal to this instance.
+		/// </summary>
+		/// <param name="obj">The object to compare to this instance.</param>
+		/// <returns><c>true</c> if the specified object is equal to this instance; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Object obj) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Determines whether the object specified is equal to this instance.
+		/// </summary>
+		/// <param name="other">The object to compare to this instance.</param>
+		/// <returns><c>true</c> if the specified object is equal to this instance; otherwise, <c>false</c>.</returns>
+		public virtual Boolean Equals($class$ other) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Serves as a hash function for a particular type. <see cref="M:Object.GetHashCode"/> is suitable for use in hashing algorithms and data structures like a hash table.
+		/// </summary>
+		/// <returns>A hash code for this instance.</returns>
+		public override Int32 GetHashCode() {
+			throw new NotImplementedException();
+		}]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>ToString</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Overrides the ToString method.</Description>
+			<Keywords>
+				<Keyword>Object</Keyword>
+				<Keyword>ToString</Keyword>
+				<Keyword>String</Keyword>
+				<Keyword>override</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Imports>
+				<Import>
+					<Namespace><![CDATA[System]]></Namespace>
+				</Import>
+			</Imports>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[
+		/// <summary>
+		/// Returns a string that represents the this instance.
+		/// </summary>
+		/// <returns>A string that represents this instance.</returns>
+		public override String ToString() {
+			throw new NotImplementedException();
+		}]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Event</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Used to create a new event.</Description>
+			<Keywords>
+				<Keyword>Event</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>description</ID>
+					<Default>Occurs when ...</Default>
+					<ToolTip>Enter the description for the event.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>eventName</ID>
+					<Default>MyEvent</Default>
+					<ToolTip>Enter the name of the event.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>eventArgs</ID>
+					<Default>EventArgs</Default>
+					<ToolTip>Enter the type of the event args.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>accessor</ID>
+					<Default>protected virtual</Default>
+					<ToolTip>Enter the accessor for the method to raise the event.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[
+		/// <summary>
+		/// $description$
+		/// </summary>
+		public event EventHandler<$eventArgs$> $eventName$;
+
+		/// <summary>
+		/// Raises the <see cref="E:$eventName$"/> event.
+		/// </summary>
+		$accessor$ void On$eventName$($eventArgs$ e) {
+			EventHandler<$eventArgs$> eventHandler = this.$eventName$;
+			if (eventHandler != null) {
+				eventHandler(this, e);
+			}
+		}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Unit Test - Method</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates a unit test for a method.</Description>
+			<Keywords>
+				<Keyword>Test</Keyword>
+				<Keyword>Unit Test</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyClass</Default>
+					<ToolTip>The name of the class being tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>methodName</ID>
+					<Default>MyMethod</Default>
+					<ToolTip>The name of the method (or other member type) to be tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>args</ID>
+					<Default>void</Default>
+					<ToolTip>Enter the comma-separated list of argument types in the method.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>condition</ID>
+					<Default><![CDATA[for the optimal path]]></Default>
+					<ToolTip>Enter the condition to be tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>number</ID>
+					<Default>1</Default>
+					<ToolTip>Enter the number of the test.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>testName</ID>
+					<Default>Optimal</Default>
+					<ToolTip>Enter the name of the test.  This is usually the centered around the inputs rather than the assertions.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[[TestMethod()]
+		[Description("$methodName$($args$) method $condition$.")]
+		public void $class$_Unit_$methodName$$number$_$testName$() {
+			Assert.Fail();
+		}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Unit Test - Constructor</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates a unit test for a constructor.</Description>
+			<Keywords>
+				<Keyword>Test</Keyword>
+				<Keyword>Unit Test</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyClass</Default>
+					<ToolTip>The name of the class being tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>args</ID>
+					<Default>void</Default>
+					<ToolTip>Enter the comma-separated list of arguments in the method.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>condition</ID>
+					<Default><![CDATA[for the optimal path]]></Default>
+					<ToolTip>Enter the condition to be tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>number</ID>
+					<Default>1</Default>
+					<ToolTip>Enter the number of the test.  This might also be the word "static" or "finalizer".</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>testName</ID>
+					<Default>Optimal</Default>
+					<ToolTip>Enter the name of the test.  This is usually the centered around the inputs rather than the assertions.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[[TestMethod()]
+		[Description(".ctor($args$) constructor $condition$.")]
+		public void $class$_Unit_Constructor$number$_$testName$() {
+			Assert.Fail();
+		}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Unit Test - Property</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates a unit test for a property.</Description>
+			<Keywords>
+				<Keyword>Test</Keyword>
+				<Keyword>Unit Test</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyClass</Default>
+					<ToolTip>The name of the class being tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>propertyName</ID>
+					<Default>MyProperty</Default>
+					<ToolTip>The name of the method (or other member type) to be tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>condition</ID>
+					<Default><![CDATA[for the optimal path]]></Default>
+					<ToolTip>Enter the condition to be tested.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>testName</ID>
+					<Default>Optimal</Default>
+					<ToolTip>Enter the name of the test.  This is usually the centered around the inputs rather than the assertions.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[[TestMethod()]
+		[Description("$propertyName$ property $condition$.")]
+		public void $class$_Unit_$propertyName$_$testName$() {
+			Assert.Fail();
+		}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

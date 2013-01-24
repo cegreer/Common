@@ -1,0 +1,2101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Serializable Class File</Title>
+			<Author>Chad E Greer</Author>
+			<Description>A basic template for a class that overrides the derived methods and provides XML documentation.</Description>
+			<Keywords>
+				<Keyword>Class</Keyword>
+				<Keyword>Template</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>The namespace for the class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>description</ID>
+					<Default>Summary description.</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>accessor</ID>
+					<Default>public</Default>
+					<ToolTip>Enter the accessor: public or internal.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>modifier</ID>
+					<Default>sealed </Default>
+					<ToolTip>Enter the modifier for the class: sealed, abstract, or none.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>className</ID>
+					<Default>MyClass</Default>
+					<ToolTip>Enter the name of the class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>base</ID>
+					<Default>Object</Default>
+					<ToolTip>The name of the base class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.Serialization;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$
+	/// </summary>
+	[Serializable()]
+	[DataContract()]
+	$accessor$ $modifier$class $className$ : $base$, IEquatable<$className$> {
+	// Constants
+	
+	// Fields
+
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		public $className$()
+			: base() {
+			// TODO: Add constructor logic
+			throw new NotImplementedException();
+		}
+
+	// Properties
+
+	// Events
+
+	// Methods
+		/// <summary>
+		/// Determines whether the specified <see cref="T:Object"/> is equal to the current <see cref="T:$className$"/>.
+		/// </summary>
+		/// <param name="obj">The <see cref="T:Object"/> to compare with the current <see cref="T:$className$"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="T:Object"/> is equal to the current <see cref="T:$className$"/>; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Object obj) {
+			$className$ other = obj as $className$;
+			return this.Equals(other);
+		}
+		/// <summary>
+		/// Determines whether the specified <see cref="T:$className$"/> is equal to the current <see cref="T:$className$"/>.
+		/// </summary>
+		/// <param name="other">The <see cref="T:$className$"/> to compare with the current <see cref="T:$className$"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="T:$className$"/> is equal to the current <see cref="T:$className$"/>; otherwise, <c>false</c>.</returns>
+		public Boolean Equals($className$ other) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Serves as a hash function for a particular type. <see cref="M:Object.GetHashCode"/> is suitable for use in hashing algorithms and data structures like a hash table.
+		/// </summary>
+		/// <returns>A hash code for the current <see cref="T:$className$"/>.</returns>
+		public override Int32 GetHashCode() {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Returns a <see cref="T:String"/> that represents the current <see cref="T:$className$"/>.
+		/// </summary>
+		/// <returns>A <see cref="T:String"/> that represents the current <see cref="T:$className$"/>.</returns>
+		public override String ToString() {
+			throw new NotImplementedException();
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Exception Class</Title>
+			<Author>Chad E Greer</Author>
+			<Description>A template for a new Exception class that overrides the derived methods and provides XML documentation.</Description>
+			<Keywords>
+				<Keyword>Class</Keyword>
+				<Keyword>Exception</Keyword>
+				<Keyword>Template</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for the class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>description</ID>
+					<Default>Summary description.</Default>
+					<ToolTip>The description of the exception.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>class</ID>
+					<Default>MyException</Default>
+					<ToolTip>Enter the name of the new exception class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>base</ID>
+					<Default>Exception</Default>
+					<ToolTip>The base class for the new exception class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Runtime.Serialization;
+using System.Security.Permissions;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$
+	/// </summary>
+	[Serializable()]
+	public class $class$ : $base$ {
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		public $class$() : base() { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="message">The message that describes the error.</param>
+		public $class$(String message) : base(message) { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="message">The message that describes the error.</param>
+		/// <param name="innerException">Contains additional information about the error.</param>
+		public $class$(String message, Exception innerException) : base(message, innerException) { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="info">Contains information used to serialize/deserialize this instance.</param>
+		/// <param name="context">Describes the source and destination of the serialization.</param>
+		/// <exception cref="ArgumentNullException"><paramref name="info"/> is a null reference.</exception>
+		/// <exception cref="SerializationException">Any errors occur during the deserialization process.</exception>
+		protected $class$(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+	// Methods
+		/// <summary>
+		/// Sets the <see cref="T:SerializationInfo"/> with information about this instance.
+		/// </summary>
+		/// <param name="info">Contains information used to serialize this instance.</param>
+		/// <param name="context">Describes the source and destination of the serialization.</param>
+		/// <exception cref="ArgumentNullException"><paramref name="info"/> is a null reference.</exception>
+		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
+		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
+		public override void GetObjectData(SerializationInfo info, StreamingContext context) {
+			base.GetObjectData(info, context);
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Argument Exception Class</Title>
+			<Author>Chad E Greer</Author>
+			<Description>A template for a new ArgumentException class that overrides the derived methods and provides XML documentation.</Description>
+			<Keywords>
+				<Keyword>Class</Keyword>
+				<Keyword>Exception</Keyword>
+				<Keyword>ArgumentException</Keyword>
+				<Keyword>Template</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="true">
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for this class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>description</ID>
+					<Default>Summary description.</Default>
+					<ToolTip>Enter a description for the new argument exception class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>class</ID>
+					<Default>MyArgumentException</Default>
+					<ToolTip>Enter the name of the new argument exception class.</ToolTip>
+				</Literal>
+				<Literal Editable="true">
+					<ID>base</ID>
+					<Default>ArgumentException</Default>
+					<ToolTip>The base class for the new argument exception class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Runtime.Serialization;
+using System.Security.Permissions;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$
+	/// </summary>
+	[Serializable()]
+	public class $class$ : $base$ {
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		public $class$() : base() { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="message">The message that describes the error.</param>
+		public $class$(String message) : base(message) { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="message">The message that describes the error.</param>
+		/// <param name="paramName">The name of the parameter that caused the current exception.</param>
+		public $class$(String message, String paramName) : base(message, paramName) { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="message">The message that describes the error.</param>
+		/// <param name="innerException">Contains additional information about the error.</param>
+		public $class$(String message, Exception innerException) : base(message, innerException) { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="message">The message that describes the error.</param>
+		/// <param name="paramName">The name of the parameter that caused the current exception.</param>
+		/// <param name="innerException">Contains additional information about the error.</param>
+		public $class$(String message, String paramName, Exception innerException) : base(message, paramName, innerException) { }
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		/// <param name="info">Contains information used to serialize/deserialize this instance.</param>
+		/// <param name="context">Describes the source and destination of the serialization.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="info"/> is a null reference.</exception>
+		/// <exception cref="System.Runtime.Serialization.SerializationException">Any errors occur during the deserialization process.</exception>
+		protected $class$(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+	// Methods
+		/// <summary>
+		/// Sets the <see cref="T:SerializationInfo"/> with information about this instance.
+		/// </summary>
+		/// <param name="info">Contains information used to serialize this instance.</param>
+		/// <param name="context">Describes the source and destination of the serialization.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="info"/> is a null reference.</exception>
+		[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
+		[SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
+		public override void GetObjectData(SerializationInfo info, StreamingContext context) {
+			base.GetObjectData(info, context);
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Singleton</Title>
+			<Author>Chad E Greer</Author>
+			<Description>A Singleton implemented class.</Description>
+			<Keywords>
+				<Keyword>Singleton</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>description</ID>
+					<Default>Summary description.</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>MyClass</Default>
+					<ToolTip>Enter the name of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for the class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Diagnostics.CodeAnalysis;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.  This class implements the singleton pattern.
+	/// </summary>
+	public sealed class $className$ : Object {
+		#region private sealed class Nested : Object {...}
+		/// <summary>
+		/// This class is used to make the pattern fully lazy.
+		/// </summary>
+		private sealed class Nested : Object {
+		// Fields
+			/// <summary>
+			/// The sole use of the Nested class is to provide the lazy, thread-safe instance of the <see cref="T:$className$"/> object.
+			/// </summary>
+			internal static readonly $className$ Instance = new $className$();
+
+		// Constructors
+			/// <summary>
+			/// Initializes a new instance of the <see cref="T:Nested"/> class.
+			/// </summary>
+			private Nested() : base() { }
+			/// <summary>
+			/// Required in order to mark the type with 'beforefieldinit'.
+			/// </summary>
+			[SuppressMessage("Microsoft.Performance", "CA1810:InitializeReferenceTypeStaticFieldsInline", Justification = "The static constructor is needed to mark the type with 'beforefieldinit'.")]
+			static Nested() { }
+		}
+		#endregion
+
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		private $className$() : base() { }
+
+	// Properties
+		/// <summary>
+		/// Gets the sole instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		public static $className$ Instance {
+			get { return $className$.Nested.Instance; }
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Provider 1 - Configuration Section</Title>
+			<Author>Chad E Greer</Author>
+			<Description>The Configuration Section to use for the Provider Pattern.</Description>
+			<Keywords>
+				<Keyword>ConfigurationSection</Keyword>
+				<Keyword>Configuration</Keyword>
+				<Keyword>Config</Keyword>
+				<Keyword>Provider</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>description</ID>
+					<Default>Defines configuration settings to support the infrastructure for configuring and managing ___.  This class may not be inherited.</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>MyProviderSection</Default>
+					<ToolTip>Enter the name of the configuration section class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Configuration;
+using System.Diagnostics.CodeAnalysis;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.
+	/// </summary>
+	public sealed class $className$ : ConfigurationSection {
+	// Constants
+		/// <summary>
+		/// The name of a configuration property = "defaultProvider".
+		/// </summary>
+		internal const String DefaultProviderConfigurationName = "defaultProvider";
+		/// <summary>
+		/// The name of a configuration property = "providers".
+		/// </summary>
+		private const String ProvidersConfigurationName = "providers";
+
+	// Fields
+		/// <summary>
+		/// The "defaultProvider" property.  This field is read-only.
+		/// </summary>
+		private static readonly ConfigurationProperty _defaultProviderProperty = new ConfigurationProperty($className$.DefaultProviderConfigurationName, typeof(String), " ", null, new StringValidator(1), ConfigurationPropertyOptions.None);
+		/// <summary>
+		/// The "providers" property.  This field is read-only.
+		/// </summary>
+		private static readonly ConfigurationProperty _providersProperty = new ConfigurationProperty($className$.ProvidersConfigurationName, typeof(ProviderSettingsCollection), null, ConfigurationPropertyOptions.None);
+		/// <summary>
+		/// The collection of configuration properties for this class.  This field is read-only.
+		/// </summary>
+		private static readonly ConfigurationPropertyCollection _properties = new ConfigurationPropertyCollection() {
+			$className$._defaultProviderProperty,
+			$className$._providersProperty
+		};
+
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		public $className$() : base() { }
+
+	// Properties
+		/// <summary>
+		/// Gets or sets the default provider.
+		/// </summary>
+		[ConfigurationProperty($className$.DefaultProviderConfigurationName, DefaultValue = " ")]
+		[StringValidator(MinLength = 1)]
+		public String DefaultProvider {
+			get { return (String)base[$className$._defaultProviderProperty]; }
+			set { base[$className$._defaultProviderProperty] = value; }
+		}
+		/// <summary>
+		/// Gets the collection of properties.
+		/// </summary>
+		protected override ConfigurationPropertyCollection Properties {
+			get { return $className$._properties; }
+		}
+		/// <summary>
+		/// Gets the collection of providers.
+		/// </summary>
+		[ConfigurationProperty($className$.ProvidersConfigurationName)]
+		public ProviderSettingsCollection Providers {
+			get { return (ProviderSettingsCollection)base[$className$._providersProperty]; }
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Provider 2 - Provider Contract</Title>
+			<Author>Chad E Greer</Author>
+			<Description>This defines the provider contract that derived providers will need to implement to provide custom functionality.</Description>
+			<Keywords>
+				<Keyword>Provider</Keyword>
+				<Keyword>Contract</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>description</ID>
+					<Default>Defines the contract to be implemented in order to provide ___ services using custom data providers.</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>MyProvider</Default>
+					<ToolTip>Enter the name of the configuration section class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+
+using ProviderBase = System.Configuration.Provider.ProviderBase;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$
+	/// </summary>
+	public abstract class $className$ : ProviderBase {
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		protected $className$() : base() { }
+
+		// TODO: Define abstract properties & methods which define the contract
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Provider 3 - Provider Collection</Title>
+			<Author>Chad E Greer</Author>
+			<Description>This defines the provider collection that will be retrieved from the configuration section.</Description>
+			<Keywords>
+				<Keyword>Provider</Keyword>
+				<Keyword>ProviderCollection</Keyword>
+				<Keyword>Providers</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>description</ID>
+					<Default>A collection of objects that inherit the ___ abstract class.  This class may not be inherited.</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>providerClassName</ID>
+					<Default>MyProvider</Default>
+					<ToolTip>Enter the name of the provider class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>MyProviderCollection</Default>
+					<ToolTip>Enter the name of the configuration section class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Diagnostics.CodeAnalysis;
+
+using ProviderBase = System.Configuration.Provider.ProviderBase;
+using ProviderCollection = System.Configuration.Provider.ProviderCollection;
+using CultureInfo = System.Globalization.CultureInfo;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.
+	/// </summary>
+	[SuppressMessage("Microsoft.Design", "CA1010:CollectionsShouldImplementGenericInterface", Justification = "This class is implemented correctly according to the Provider Model pattern.")]
+	public sealed class $className$ : ProviderCollection {
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		public $className$() : base() { }
+
+	// Properties
+		/// <summary>
+		/// Gets the <see cref="T:$providerClassName$"/> provider in the collection referenced by the specified provider name.
+		/// </summary>
+		/// <param name="name">The name of the <see cref="T:$providerClassName$"/> provider to retrieve.</param>
+		/// <returns>A reference to the <see cref="T:$providerClassName$"/> specified by name.</returns>
+		new public $providerClassName$ this[String name] {
+			get { return ($providerClassName$)base[name]; }
+		}
+
+	// Methods
+		/// <summary>
+		/// Adds a provider to the collection.
+		/// </summary>
+		/// <param name="provider">The provider to be added.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="provider"/> is a null reference.</exception>
+		/// <exception cref="System.ArgumentException">The <see cref="P:ProviderBase.Name"/> of <paramref name="provider"/> is a null reference.
+		/// -or- The length of the <see cref="P:ProviderBase.Name"/> of <paramref name="provider "/> is less than 1.
+		/// -or- <paramref name="provider"/> is not of type <see cref="$providerClassName$"/>.</exception>
+		/// <exception cref="System.NotSupportedException">The collection is read-only.</exception>
+		public override void Add(ProviderBase provider) {
+			if (provider == null) {
+				throw new ArgumentNullException("provider");
+			}
+			if (!(provider is $providerClassName$)) {
+#warning Add the string to a .resx file.
+				throw new ArgumentException(String.Format(CultureInfo.CurrentCulture, "The provider specified is not of the type {0}.", new Object[] { typeof($providerClassName$).FullName }), "provider");
+			}
+			base.Add(provider);
+		}
+		/// <summary>
+		/// Copies the <see cref="T:$providerClassName$"/> provider collection to a one-dimensional array.
+		/// </summary>
+		/// <param name="array">A one-dimensional array that is the destination of the elements copied from the <see cref="T:$className$"/>.  The array must have zero-based indexing.</param>
+		/// <param name="index">The zero-based index at which copying begins.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="array"/> is a null reference.</exception>
+		/// <exception cref="System.ArgumentException"><paramref name="array"/> is multidimensional.
+		/// -or- <paramref name="index"/> is equal to or greater than the length of <paramref name="array"/>.
+		/// -or- The number of elements in the source array is greater than the available space from index to the end of the destination array.</exception>
+		/// <exception cref="System.InvalidCastException">The type of the source array cannot be cast automatically to the type of the destination array.</exception>
+		/// <exception cref="System.ArgumentOutOfRangeException"><paramref name="index"/> is less than zero.</exception>
+		public void CopyTo($providerClassName$[] array, Int32 index) {
+			base.CopyTo(array, index);
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Provider 4 - Static Class</Title>
+			<Author>Chad E Greer</Author>
+			<Description>This class is used to expose the functionality implemented by the providers.</Description>
+			<Keywords>
+				<Keyword>Provider</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>description</ID>
+					<Default>Summary description.</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>MyClass</Default>
+					<ToolTip>Enter the name of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace for the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>providerClassName</ID>
+					<Default>MyProvider</Default>
+					<ToolTip>Enter the name of the provider class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>providerCollectionClassName</ID>
+					<Default>MyProviderCollection</Default>
+					<ToolTip>Enter the name of the provider collection class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>configSectionClassName</ID>
+					<Default>MyProviderSection</Default>
+					<ToolTip>Enter the name of the configuration section class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>configSectionName</ID>
+					<Default>mySection</Default>
+					<ToolTip>The name of the configuration section in the .config file.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Delimiter="$" Language="CSharp"><![CDATA[using System;
+using System.Configuration;
+using System.Configuration.Provider;
+
+using NameValueCollection = System.Collections.Specialized.NameValueCollection;
+using CultureInfo = System.Globalization.CultureInfo;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.
+	/// </summary>
+	public static class $className$ : Object {
+	// Fields
+		/// <summary>
+		/// Used to synchronize the initialization of this class.
+		/// </summary>
+		private static Object _door = new Object();
+		/// <summary>
+		/// Represents any exception that was caught during initialization.
+		/// </summary>
+		private static Exception _initializationException;
+		/// <summary>
+		/// Determines whether or not this instance has been successfully initialized.
+		/// </summary>
+		private static Boolean _isInitialized;
+		/// <summary>
+		/// Represents the default provider.
+		/// </summary>
+		private static $providerClassName$ _provider;
+		/// <summary>
+		/// Represents the collection of available providers.
+		/// </summary>
+		private static $providerCollectionClassName$ _providers;
+
+	// Properties
+		/// <summary>
+		/// Gets the default provider to use.
+		/// </summary>
+		public static $providerClassName$ Provider {
+			get {
+				$className$.Initialize();
+				return $className$._provider;
+			}
+		}
+		/// <summary>
+		/// Gets all of the available providers that can be used.
+		/// </summary>
+		public static $providerCollectionClassName$ Providers {
+			get {
+				$className$.Initialize();
+				return $className$._providers;
+			}
+		}
+
+	// Methods
+		/// <summary>
+		/// Retrieves and validates the configuration section for the providers represented by this class.
+		/// </summary>
+		/// <returns>A reference to the <see cref="T:$configSectionClassName$"/> retrieved and validated.</returns>
+		/// <exception cref="System.Configuration.Provider.ProviderException">The configuration section is not defined or is invalid because required information is missing to initialize the providers.</exception>
+		/// <exception cref="System.Configuration.ConfigurationErrorsException">An error occurs while reading the configuration section.</exception>
+		private static $configSectionClassName$ GetValidConfigurationSection() {
+			$configSectionClassName$ configSection = ($configSectionClassName$)ConfigurationManager.GetSection("$configSectionName$");
+			if (configSection == null) {
+#warning Add the string to a .resx file.
+				throw new ProviderException(String.Format(CultureInfo.CurrentCulture, "The application's config file does not have a section of type {0}.", new Object[] { typeof($configSectionClassName$).FullName }));
+			}
+			if (configSection.DefaultProvider == null) {
+#warning Add the string to a .resx file.
+				throw new ProviderException("A default provider was not specified.");
+			}
+			if (configSection.Providers == null || configSection.Providers.Count < 1) {
+#warning Add the string to a .resx file.
+				throw new ProviderException("No providers were added.");
+			}
+			return configSection;
+		}
+		/// <summary>
+		/// Initializes the class from the application's configuration file.
+		/// </summary>
+		/// <exception cref="System.Configuration.Provider.ProviderException">The configuration section is not defined or is invalid because required information is missing to initialize the providers.</exception>
+		/// <exception cref="System.Configuration.ConfigurationErrorsException">An error occurs while reading the configuration section.</exception>
+		private static void Initialize() {
+			$className$.ThrowInitializationException();
+
+			if (!$className$._isInitialized) {
+				lock ($className$._door) {
+					$className$.ThrowInitializationException();
+					if (!$className$._isInitialized) {
+						try {
+							$configSectionClassName$ configSection = $className$.GetValidConfigurationSection();
+							$className$._providers = new $providerCollectionClassName$();
+							$className$.InstantiateProviders(configSection.Providers);
+							$className$._provider = $className$._providers[configSection.DefaultProvider];
+							if ($className$._provider == null) {
+								PropertyInformation defaultProviderProperty = configSection.ElementInformation.Properties[$configSectionClassName$.DefaultProviderConfigurationName];
+#warning Add the string to a .resx file.
+								throw new ConfigurationErrorsException("The default provider was not specified or could not be loaded.", defaultProviderProperty.Source, defaultProviderProperty.LineNumber);
+							}
+							$className$._providers.SetReadOnly();
+						}
+						catch (Exception exc) {
+							$className$._initializationException = exc;
+							throw;
+						}
+						$className$._isInitialized = true;
+					}
+				}
+			}
+		}
+		/// <summary>
+		/// Instatiates the providers based on the value specified.
+		/// </summary>
+		/// <param name="providerSettingsCollection">Contains the information necessary to instantiate the providers.</param>
+		/// <exception cref="System.Configuration.ConfigurationException">An error occurs while attempting to instantiate the providers.</exception>
+		/// <exception cref="System.Configuration.ConfigurationErrorsException">An error occurs while attempting to instantiate the providers.</exception>
+		private static void InstantiateProviders(ProviderSettingsCollection providerSettingsCollection) {
+			if (providerSettingsCollection != null) {
+				ProviderBase providerBase;
+				foreach (ProviderSettings providerSettings in providerSettingsCollection) {
+					providerBase = null;
+					try {
+						String assemblyQualifiedTypeName = providerSettings.Type == null ? null : providerSettings.Type.Trim();
+						if (String.IsNullOrEmpty(assemblyQualifiedTypeName)) {
+#warning Add the string to a .resx file.
+							throw new ArgumentException(String.Format(CultureInfo.CurrentCulture, "No type was specified for the provider ({0}).", new Object[] { providerSettings.Name }));
+						}
+						Type providerType = Type.GetType(assemblyQualifiedTypeName, true, true);
+						if (!typeof($providerClassName$).IsAssignableFrom(providerType)) {
+#warning Add the string to a .resx file.
+							throw new ArgumentException(String.Format(CultureInfo.CurrentCulture, "The type specified ({0}) for the provider ({1}) is not valid or does not derive from {2}.", new Object[] { assemblyQualifiedTypeName, providerSettings.Name, typeof($providerClassName$).FullName }));
+						}
+						providerBase = (ProviderBase)Activator.CreateInstance(providerType);
+						NameValueCollection parameters = providerSettings.Parameters;
+						NameValueCollection configuration = new NameValueCollection(parameters.Count, StringComparer.Ordinal);
+						foreach (String key in parameters) {
+							configuration[key] = parameters[key];
+						}
+						providerBase.Initialize(providerSettings.Name, configuration);
+					}
+					catch (ConfigurationException) {
+						throw;
+					}
+					catch (Exception exc) {
+						PropertyInformation typeProperty = providerSettings.ElementInformation.Properties["type"];
+#warning Add the string to a .resx file.
+						throw new ConfigurationErrorsException(String.Format(CultureInfo.CurrentCulture, "A provider ({0}) could not be loaded for the following reason: {1}\n\rSee the inner exception for more details.", new Object[] { providerSettings.Name, exc.Message }), exc, typeProperty.Source, typeProperty.LineNumber);
+					}
+					$className$._providers.Add(providerBase);
+				}
+			}
+		}
+		/// <summary>
+		/// Throws the initialization exception if it exists.  Otherwise, nothing happens.
+		/// </summary>
+		/// <exception cref="System.Configuration.Provider.ProviderException">The configuration section is not defined or is invalid because required information is missing to initialize the providers.</exception>
+		/// <exception cref="System.Configuration.ConfigurationErrorsException">An error occurs while reading the configuration section.</exception>
+		private static void ThrowInitializationException() {
+			if ($className$._initializationException != null) {
+				throw $className$._initializationException;
+			}
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Test File</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates an empty unit test file.</Description>
+			<Keywords>
+				<Keyword>Test</Keyword>
+				<Keyword>Unit Test</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace of the class to test.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyClass</Default>
+					<ToolTip>Enter the name of the class being tested.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace $namespace$ {
+	/// <summary>
+	/// This is a test class for <see cref="T:$class$"/> and is intended to contain all <see cref="T:$class$"/> Unit Tests.
+	///</summary>
+	[TestClass()]
+	public class $class$Tests {
+		#region Test Class Implementation
+		/// <summary>
+		/// Describes the context under which the current test is running.
+		/// </summary>
+		private TestContext _testContextInstance;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$Tests"/> class.
+		/// </summary>
+		public $class$Tests() : base() { }
+
+		/// <summary>
+		/// Gets or sets the test context which provides information about and functionality for the current test run.
+		///</summary>
+		public TestContext TestContext {
+			get { return this._testContextInstance; }
+			set { this._testContextInstance = value; }
+		}
+		#region Additional test attributes
+		// 
+		//You can use the following additional attributes as you write your tests:
+		//
+		//Use ClassInitialize to run code before running the first test in the class
+		//
+		//[ClassInitialize()]
+		//public static void MyClassInitialize(TestContext testContext)
+		//{
+		//}
+		//
+		//Use ClassCleanup to run code after all tests in a class have run
+		//
+		//[ClassCleanup()]
+		//public static void MyClassCleanup()
+		//{
+		//}
+		//
+		//Use TestInitialize to run code before running each test
+		//
+		//[TestInitialize()]
+		//public void MyTestInitialize()
+		//{
+		//}
+		//
+		//Use TestCleanup to run code after each test has run
+		//
+		//[TestCleanup()]
+		//public void MyTestCleanup()
+		//{
+		//}
+		//
+		#endregion
+		#endregion
+	}
+}]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Custom Membership Provider</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates an empty custom membership provider class.</Description>
+			<Keywords>
+				<Keyword>Membership</Keyword>
+				<Keyword>Provider</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyMembershipProvider</Default>
+					<ToolTip>Enter the name of the custom membership provider class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>description</ID>
+					<Default>A custom membership provider that uses a custom a data source.</Default>
+					<ToolTip>Enter the description of the custom provider.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>applicationName</ID>
+					<Default>My Application Name</Default>
+					<ToolTip>Enter the default value to use for the application name.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$">
+			<![CDATA[using System;
+using System.Web.Security;
+
+using NameValueCollection = System.Collections.Specialized.NameValueCollection;
+	
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.
+	/// </summary>
+	public sealed class $class$ : MembershipProvider {
+	// Fields
+		/// <summary>
+		/// The name of the application for which this instance has been created.
+		/// </summary>
+		private String _applicationName;
+
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		public $class$() : base() { }
+
+	// Properties
+		/// <summary>
+		/// Gets the name of the application using the custom membership provider.
+		/// </summary>
+		/// <exception cref="System.NotSupportedException">An attempt is made to call the setter.</exception>
+		public override String ApplicationName {
+			get { return this._applicationName; }
+			set { throw new NotSupportedException(); }
+		}
+		/// <summary>
+		/// Gets a value indicating whether the membership provider is configured to allow users to reset their passwords.
+		/// </summary>
+		public override Boolean EnablePasswordReset {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets a value indicating whether the membership provider is configured to allow users to retrieve their passwords.
+		/// </summary>
+		public override Boolean EnablePasswordRetrieval {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		///  Gets the number of invalid password or password-answer attempts allowed before the membership user is locked out.
+		/// </summary>
+		public override Int32 MaxInvalidPasswordAttempts {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets the minimum number of special characters that must be present in a valid password.
+		/// </summary>
+		public override Int32 MinRequiredNonAlphanumericCharacters {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets the minimum length required for a password.
+		/// </summary>
+		public override Int32 MinRequiredPasswordLength {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets the number of minutes in which a maximum number of invalid password or password-answer attempts are allowed before the membership user is locked out.
+		/// </summary>
+		public override Int32 PasswordAttemptWindow {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets a value indicating the format for storing passwords in the membership data store.
+		/// </summary>
+		public override MembershipPasswordFormat PasswordFormat {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets the regular expression used to evaluate a password.
+		/// </summary>
+		public override String PasswordStrengthRegularExpression {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		/// Gets a value indicating whether the membership provider is configured to require the user to answer a password question for password reset and retrieval.
+		/// </summary>
+		public override Boolean RequiresQuestionAndAnswer {
+			get { throw new NotImplementedException(); }
+		}
+		/// <summary>
+		///  Gets a value indicating whether the membership provider is configured to require a unique e-mail address for each user name.
+		/// </summary>
+		public override Boolean RequiresUniqueEmail {
+			get { throw new NotImplementedException(); }
+		}
+
+	// Methods
+		/// <summary>
+		/// Processes a request to update the password for a membership user.
+		/// </summary>
+		/// <param name="username">The user to update the password for.</param>
+		/// <param name="oldPassword">The current password for the specified user.</param>
+		/// <param name="newPassword">The new password for the specified user.</param>
+		/// <returns><c>true</c> if the password was updated successfully; otherwise, <c>false</c>.</returns>
+		public override Boolean ChangePassword(String username, String oldPassword, String newPassword) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Processes a request to update the password question and answer for a membership user.
+		/// </summary>
+		/// <param name="username">The user to change the password question and answer for.</param>
+		/// <param name="password">The password for the specified user.</param>
+		/// <param name="newPasswordQuestion">The new password question for the specified user.</param>
+		/// <param name="newPasswordAnswer">The new password answer for the specified user.</param>
+		/// <returns><c>true</c> if the password question and answer are updated successfully; otherwise, <c>false</c>.</returns>
+		public override Boolean ChangePasswordQuestionAndAnswer(String username, String password, String newPasswordQuestion, String newPasswordAnswer) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Adds a new membership user to the data source.
+		/// </summary>
+		/// <param name="username">The user name for the new user.</param>
+		/// <param name="password">The password for the new user.</param>
+		/// <param name="email">The e-mail address for the new user.</param>
+		/// <param name="passwordQuestion">The password question for the new user.</param>
+		/// <param name="passwordAnswer">The password answer for the new user.</param>
+		/// <param name="isApproved">Whether or not the new user is approved to be validated.</param>
+		/// <param name="providerUserKey">The unique identifier from the membership data source for the user.</param>
+		/// <param name="status">Indicates whether the user was created successfully.</param>
+		/// <returns>A <see cref="T:MembershipUser"/> object populated with the information for the newly created user.</returns>
+		public override MembershipUser CreateUser(String username, String password, String email, String passwordQuestion, String passwordAnswer, Boolean isApproved, Object providerUserKey, out MembershipCreateStatus status) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Removes a user from the membership data source.
+		/// </summary>
+		/// <param name="username">The name of the user to delete.</param>
+		/// <param name="deleteAllRelatedData"><c>true</c> to delete data related to the user from the database; <c>false</c> to leave data related to the user in the database.</param>
+		/// <returns><c>true</c> if the user was successfully deleted; otherwise, <c>false</c>.</returns>
+		public override Boolean DeleteUser(String username, Boolean deleteAllRelatedData) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a collection of membership users where the e-mail address contains the specified e-mail address to match.
+		/// </summary>
+		/// <param name="emailToMatch">The e-mail address to search for.</param>
+		/// <param name="pageIndex">The 0-based index of the page of results to return.</param>
+		/// <param name="pageSize">The size of the page of results to return.</param>
+		/// <param name="totalRecords">The total number of matched users.</param>
+		/// <returns>A <see cref="T:MembershipUserCollection"/> collection that contains a page of <paramref name="pageSize"/> <see cref="T:MembershipUser"/> objects beginning at the page specified by <paramref name="pageIndex"/>.</returns>
+		public override MembershipUserCollection FindUsersByEmail(String emailToMatch, Int32 pageIndex, Int32 pageSize, out Int32 totalRecords) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a collection of membership users where the user name contains the specified user name to match.
+		/// </summary>
+		/// <param name="usernameToMatch">The user name to search for.</param>
+		/// <param name="pageIndex">The 0-based index of the page of results to return.</param>
+		/// <param name="pageSize">The size of the page of results to return.</param>
+		/// <param name="totalRecords">The total number of matched users.</param>
+		/// <returns>A <see cref="T:MembershipUserCollection"/> collection that contains a page of <paramref name="pageSize"/> <see cref="T:MembershipUser"/> objects beginning at the page specified by <paramref name="pageIndex"/>.</returns>
+		public override MembershipUserCollection FindUsersByName(String usernameToMatch, Int32 pageIndex, Int32 pageSize, out Int32 totalRecords) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a collection of all the users in the data source in pages of data.
+		/// </summary>
+		/// <param name="pageIndex">The 0-based index of the page of results to return.</param>
+		/// <param name="pageSize">The size of the page of results to return.</param>
+		/// <param name="totalRecords">The total number of matched users.</param>
+		/// <returns>A <see cref="T:MembershipUserCollection"/> collection that contains a page of <paramref name="pageSize"/> <see cref="T:MembershipUser"/> objects beginning at the page specified by <paramref name="pageIndex"/>.</returns>
+		public override MembershipUserCollection GetAllUsers(Int32 pageIndex, Int32 pageSize, out Int32 totalRecords) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets the number of users currently accessing the application.
+		/// </summary>
+		/// <returns>The number of users currently accessing the application.</returns>
+		public override Int32 GetNumberOfUsersOnline() {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets the password for the specified user name from the data source.
+		/// </summary>
+		/// <param name="username">The user to retrieve the password for.</param>
+		/// <param name="answer">The password answer for the user.</param>
+		/// <returns>The password for the specified user name.</returns>
+		public override String GetPassword(String username, String answer) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets user information from the data source based on the unique identifier for the membership user.  Provides an option to update the last-activity date/time stamp for the user.
+		/// </summary>
+		/// <param name="username">The name of the user to get information for.</param>
+		/// <param name="userIsOnline"><c>true</c> to update the last-activity date/time stamp for the user; <c>false</c> to return user information without updating the last-activity date/time stamp for the user.</param>
+		/// <returns>A <see cref="T:MembershipUser"/> object populated with the specified user's information from the data source.</returns>
+		public override MembershipUser GetUser(String username, Boolean userIsOnline) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets user information from the data source based on the unique identifier for the membership user.  Provides an option to update the last-activity date/time stamp for the user.
+		/// </summary>
+		/// <param name="providerUserKey">The unique identifier for the membership user to get information for.</param>
+		/// <param name="userIsOnline"><c>true</c> to update the last-activity date/time stamp for the user; <c>false</c> to return user information without updating the last-activity date/time stamp for the user.</param>
+		/// <returns>A <see cref="T:MembershipUser"/> object populated with the specified user's information from the data source.</returns>
+		public override MembershipUser GetUser(Object providerUserKey, Boolean userIsOnline) {
+			return this.GetUser(providerUserKey as String, userIsOnline);
+		}
+		/// <summary>
+		/// Gets the user name associated with the specified e-mail address.
+		/// </summary>
+		/// <param name="email">The e-mail address to search for.</param>
+		/// <returns>The user name associated with the specified e-mail address.  If no match is found, return null.</returns>
+		public override String GetUserNameByEmail(String email) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Initializes the provider.
+		/// </summary>
+		/// <param name="name">The friendly name of the provider.</param>
+		/// <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="name"/> is a null reference.
+		/// -or- <paramref name="config"/> is a null reference.</exception>
+		/// <exception cref="System.ArgumentException"><paramref name="name"/> has a length of 0.</exception>
+		/// <exception cref="System.InvalidOperationException">An attempt is made to call <see cref="M:ProviderBase.Initialize"/> on a provider after the provider has already been initialized.</exception>
+		/// <exception cref="System.Configuration.ConfigurationErrorsException">The configuration values provided in <paramref name="config"/> are invalid.</exception>
+		public override void Initialize(String name, NameValueCollection config) {
+			// Validation and base implementation.
+			if (name == null) {
+				throw new ArgumentNullException("name");
+			}
+			if (config == null) {
+				throw new ArgumentNullException("config");
+			}
+			base.Initialize(name, config);
+
+			String applicationName = config["applicationName"];
+			config.Remove("applicationName");
+			if (String.IsNullOrEmpty(applicationName)) {
+				applicationName = "$applicationName$";
+			}
+			this._applicationName = applicationName;
+		}
+		/// <summary>
+		/// Resets a user's password to a new, automatically generated password.
+		/// </summary>
+		/// <param name="username">The user to reset the password for.</param>
+		/// <param name="answer">The password answer for the specified user.</param>
+		/// <returns>The new password for the specified user.</returns>
+		public override String ResetPassword(String username, String answer) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Clears a lock so that the membership user can be validated.
+		/// </summary>
+		/// <param name="userName">The membership user whose lock status you want to clear.</param>
+		/// <returns><c>true</c> if the membership user was successfully unlocked; otherwise, <c>false</c>.</returns>
+		public override Boolean UnlockUser(String userName) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Updates information about a user in the data source.
+		/// </summary>
+		/// <param name="user">A <see cref="T:MembershipUser"/> object that represents the user to update and the updated information for the user.</param>
+		public override void UpdateUser(MembershipUser user) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Verifies that the specified user name and password exist in the data source.
+		/// </summary>
+		/// <param name="username">The name of the user to validate.</param>
+		/// <param name="password">The password for the specified user.</param>
+		/// <returns><c>true</c> if the specified username and password are valid; otherwise, <c>false</c>.</returns>
+		public override Boolean ValidateUser(String username, String password) {
+			throw new NotImplementedException();
+		}
+	}
+}
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Custom Role Provider</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates an empty custom role provider class.</Description>
+			<Keywords>
+				<Keyword>Role</Keyword>
+				<Keyword>Provider</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>class</ID>
+					<Default>MyRoleProvider</Default>
+					<ToolTip>Enter the name of the custom role provider class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>description</ID>
+					<Default>A custom role provider that uses a custom a data source.</Default>
+					<ToolTip>Enter the description of the custom provider.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>applicationName</ID>
+					<Default>My Application Name</Default>
+					<ToolTip>Enter the default value to use for the application name.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$">
+				<![CDATA[using System;
+using System.Web.Security;
+
+using NameValueCollection = System.Collections.Specialized.NameValueCollection;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.
+	/// </summary>
+	public sealed class $class$ : RoleProvider {
+	// Fields
+		/// <summary>
+		/// The name of the application for which this instance has been created.
+		/// </summary>
+		private String _applicationName;
+	
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$class$"/> class.
+		/// </summary>
+		public $class$() : base() { }
+
+	// Properties
+		/// <summary>
+		/// Gets the name of the application to store and retrieve role information for.
+		/// </summary>
+		/// <exception cref="System.NotSupportedException">An attempt is made to call the setter.</exception>
+		public override String ApplicationName {
+			get { return this._applicationName; }
+			set { throw new NotSupportedException(); }
+		}
+
+	// Methods
+		/// <summary>
+		/// Adds the specified user names to the specified roles for the configured applicationName.
+		/// </summary>
+		/// <param name="usernames">A string array of user names to be added to the specified roles.</param>
+		/// <param name="roleNames">A string array of the role names to add the specified user names to.</param>
+		public override void AddUsersToRoles(String[] usernames, String[] roleNames) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Adds a new role to the data source for the configured applicationName.
+		/// </summary>
+		/// <param name="roleName">The name of the role to create.</param>
+		public override void CreateRole(String roleName) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Removes a role from the data source for the configured applicationName.
+		/// </summary>
+		/// <param name="roleName">The name of the role to delete.</param>
+		/// <param name="throwOnPopulatedRole">If <c>true</c>, throw an exception if <paramref name="roleName"/> has one or more members and do not delete <paramref name="roleName"/>.</param>
+		/// <returns><c>true</c> if the role was successfully deleted; otherwise, <c>false</c>.</returns>
+		public override Boolean DeleteRole(String roleName, Boolean throwOnPopulatedRole) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets an array of user names in a role where the user name contains the specified user name to match.
+		/// </summary>
+		/// <param name="roleName">The role to search in.</param>
+		/// <param name="usernameToMatch">The user name to search for.</param>
+		/// <returns>A string array containing the names of all the users where the user name matches <paramref name="usernameToMatch"/> and the user is a member of the specified role.</returns>
+		public override String[] FindUsersInRole(String roleName, String usernameToMatch) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a list of all the roles for the configured applicationName.
+		/// </summary>
+		/// <returns>A string array containing the names of all the roles stored in the data source for the configured applicationName.</returns>
+		public override String[] GetAllRoles() {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a list of the roles that a specified user is in for the configured applicationName.
+		/// </summary>
+		/// <param name="username">The user to return a list of roles for.</param>
+		/// <returns>A string array containing the names of all the roles that the specified user is in for the configured applicationName.</returns>
+		public override String[] GetRolesForUser(String username) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a list of users in the specified role for the configured applicationName.
+		/// </summary>
+		/// <param name="roleName">The name of the role to get the list of users for.</param>
+		/// <returns>A string array containing the names of all the users who are members of the specified role for the configured applicationName.</returns>
+		public override String[] GetUsersInRole(String roleName) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Initializes the provider.
+		/// </summary>
+		/// <param name="name">The friendly name of the provider.</param>
+		/// <param name="config">A collection of the name/value pairs representing the provider-specific attributes specified in the configuration for this provider.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="name"/> is a null reference.
+		/// -or- <paramref name="config"/> is a null reference.</exception>
+		/// <exception cref="System.ArgumentException"><paramref name="name"/> has a length of 0.</exception>
+		/// <exception cref="System.InvalidOperationException">An attempt is made to call <see cref="M:ProviderBase.Initialize"/> on a provider after the provider has already been initialized.</exception>
+		/// <exception cref="System.Configuration.ConfigurationErrorsException">The configuration values provided in <paramref name="config"/> are invalid.</exception>
+		public override void Initialize(String name, NameValueCollection config) {
+			// Validation and base implementation.
+			if (name == null) {
+				throw new ArgumentNullException("name");
+			}
+			if (config == null) {
+				throw new ArgumentNullException("config");
+			}
+			base.Initialize(name, config);
+
+			String applicationName = config["applicationName"];
+			config.Remove("applicationName");
+			if (String.IsNullOrEmpty(applicationName)) {
+				applicationName = "$applicationName$";
+			}
+			this._applicationName = applicationName;
+		}
+		/// <summary>
+		/// Gets a value indicating whether the specified user is in the specified role for the configured applicationName.
+		/// </summary>
+		/// <param name="username">The user name to search for.</param>
+		/// <param name="roleName">The role to search in.</param>
+		/// <returns><c>true</c> if the specified user is in the specified role for the configured applicationName; otherwise, <c>false</c>.</returns>
+		public override Boolean IsUserInRole(String username, String roleName) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Removes the specified user names from the specified roles for the configured applicationName.
+		/// </summary>
+		/// <param name="usernames">A string array of user names to be removed from the specified roles.</param>
+		/// <param name="roleNames">A string array of role names to remove the specified user names from.</param>
+		public override void RemoveUsersFromRoles(String[] usernames, String[] roleNames) {
+			throw new NotImplementedException();
+		}
+		/// <summary>
+		/// Gets a value indicating whether the specified role name already exists in the role data source for the configured applicationName.
+		/// </summary>
+		/// <param name="roleName">The name of the role to search for in the data source.</param>
+		/// <returns><c>true</c> if the role name already exists in the data source for the configured applicationName; otherwise, <c>false</c>.</returns>
+		public override Boolean RoleExists(String roleName) {
+			throw new NotImplementedException();
+		}
+	}
+}
+]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Logger</Title>
+			<Author>Chad E Greer</Author>
+			<Description>Creates a helper class that provides logging functionality.</Description>
+			<Keywords>
+				<Keyword>Logging</Keyword>
+				<Keyword>Diagnostics</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>class</ID>
+					<Default>Logger</Default>
+					<ToolTip>You may change the name of the class if needed.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>applicationName</ID>
+					<Default>My Application Name</Default>
+					<ToolTip>Enter the default value to use for the application name.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="$"><![CDATA[using System;
+using System.Diagnostics;
+
+namespace $namespace$ {
+	/// <summary>
+	/// Provides logging functionality for types in the <see cref="N:$namespace$"/> namespace.  This class may not be inherited.
+	/// </summary>
+	public static class $class$ {
+	// Fields
+		/// <summary>
+		/// The trace source to which to log information.  This field is read-only.
+		/// </summary>
+		private static readonly TraceSource _source = new TraceSource(Logger.TraceSourceName, SourceLevels.Warning);
+
+	// Properties
+		/// <summary>
+		/// Gets the name of the trace source used by this type.
+		/// </summary>
+		public static String TraceSourceName {
+			get { return "$applicationName$"; }
+		}
+
+	// Methods
+		/// <summary>
+		/// Logs information to the trace source.
+		/// </summary>
+		/// <param name="eventType">The type of event to log.</param>
+		/// <param name="source">The source of the trace event.</param>
+		/// <param name="messageOrFormat">The message or message format to log.</param>
+		/// <param name="args">The optional list of arguments to provide to <paramref name="messageOrFormat"/>.</param>
+		private static void Log(TraceEventType eventType, Object source, String messageOrFormat, Object[] args) {
+			Debug.Assert(source != null);
+			Debug.Assert(messageOrFormat != null);
+			Type type = (source as Type) ?? source.GetType();
+
+			if (args != null && args.Length > 0) {
+				Logger._source.TraceEvent(eventType, type.GetHashCode(), messageOrFormat, args);
+			}
+			else {
+				Logger._source.TraceEvent(eventType, type.GetHashCode(), messageOrFormat);
+			}
+		}
+		/// <summary>
+		/// Logs an error message.
+		/// </summary>
+		/// <param name="instance">The object that represents the source of the message.</param>
+		/// <param name="messageOrFormat">The message or message format to log.</param>
+		/// <param name="args">The optional list of arguments to provide to <paramref name="messageOrFormat"/>.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="instance"/> is a null reference.
+		/// -or- <paramref name="messageOrFormat"/> is a null reference.</exception>
+		public static void LogError(this Object instance, String messageOrFormat, params Object[] args) {
+			if (instance == null) {
+				throw new ArgumentNullException("instance");
+			}
+			if (messageOrFormat == null) {
+				throw new ArgumentNullException("messageOrFormat");
+			}
+			Logger.Log(TraceEventType.Error, instance, messageOrFormat, args);
+		}
+		/// <summary>
+		/// Logs an information message.
+		/// </summary>
+		/// <param name="instance">The object that represents the source of the message.</param>
+		/// <param name="messageOrFormat">The message or message format to log.</param>
+		/// <param name="args">The optional list of arguments to provide to <paramref name="messageOrFormat"/>.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="instance"/> is a null reference.
+		/// -or- <paramref name="messageOrFormat"/> is a null reference.</exception>
+		public static void LogInformation(this Object instance, String messageOrFormat, params Object[] args) {
+			if (instance == null) {
+				throw new ArgumentNullException("instance");
+			}
+			if (messageOrFormat == null) {
+				throw new ArgumentNullException("messageOrFormat");
+			}
+			Logger.Log(TraceEventType.Information, instance, messageOrFormat, args);
+		}
+		/// <summary>
+		/// Logs a warning message.
+		/// </summary>
+		/// <param name="instance">The object that represents the source of the message.</param>
+		/// <param name="messageOrFormat">The message or message format to log.</param>
+		/// <param name="args">The optional list of arguments to provide to <paramref name="messageOrFormat"/>.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="instance"/> is a null reference.
+		/// -or- <paramref name="messageOrFormat"/> is a null reference.</exception>
+		public static void LogWarning(this Object instance, String messageOrFormat, params Object[] args) {
+			if (instance == null) {
+				throw new ArgumentNullException("instance");
+			}
+			if (messageOrFormat == null) {
+				throw new ArgumentNullException("messageOrFormat");
+			}
+			Logger.Log(TraceEventType.Warning, instance, messageOrFormat, args);
+		}
+		/// <summary>
+		/// Logs a verbose message.
+		/// </summary>
+		/// <param name="instance">The object that represents the source of the message.</param>
+		/// <param name="messageOrFormat">The message or message format to log.</param>
+		/// <param name="args">The optional list of arguments to provide to <paramref name="messageOrFormat"/>.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="instance"/> is a null reference.
+		/// -or- <paramref name="messageOrFormat"/> is a null reference.</exception>
+		public static void LogVerbose(this Object instance, String messageOrFormat, params Object[] args) {
+			if (instance == null) {
+				throw new ArgumentNullException("instance");
+			}
+			if (messageOrFormat == null) {
+				throw new ArgumentNullException("messageOrFormat");
+			}
+			Logger.Log(TraceEventType.Verbose, instance, messageOrFormat, args);
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Immutable Data-Type Class</Title>
+			<Author>Chad E Greer</Author>
+			<Description>A template for an immutable data-type class whose API is similar to DateTime and Guid.</Description>
+			<Keywords>
+				<Keyword>Class</Keyword>
+				<Keyword>Data-type</Keyword>
+				<Keyword>Immutable</Keyword>
+				<Keyword>Parse</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>MyNamespace</Default>
+					<ToolTip>Enter the namespace of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>description</ID>
+					<Default>Description...</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>MyClass</Default>
+					<ToolTip>Enter the name of the class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[using System;
+
+using ImmutableObject = System.ComponentModel.ImmutableObjectAttribute;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.  Instances of this class are immutable.
+	/// </summary>
+	[Serializable()]
+	[ImmutableObject(true)]
+	public sealed class $className$ : Object, IEquatable<$className$>, IEquatable<String> {
+	// Fields
+		/// <summary>
+		/// The actual value.  This field is read-only.
+		/// </summary>
+		private readonly String _value;
+
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		/// <param name="value">The actual value.</param>
+		/// <exception cref="System.ArgumentNullException"><paramref name="value"/> is a null reference.</exception>
+		private $className$(String value)
+			: base() {
+#warning // TODO: Replace this constructor with a valid one.
+			if (value == null) {
+				throw new ArgumentNullException("value");
+			}
+			this._value = value;
+		}
+
+	// Methods
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects are equal; otherwise, <c>false</c>.</returns>
+		private static Boolean AreEqual($className$ objA, $className$ objB) {
+			if (Object.ReferenceEquals(objA, objB)) {
+				return true;
+			}
+			else if (Object.ReferenceEquals(objA, null)) {
+				return Object.ReferenceEquals(objB, null);
+			}
+			else if (Object.ReferenceEquals(objB, null)) {
+				return false;
+			}
+
+#warning // TODO: Implement valid logic.
+			return String.Equals(objA._value, objB._value, StringComparison.OrdinalIgnoreCase);
+		}
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects are equal; otherwise, <c>false</c>.</returns>
+		private static Boolean AreEqual($className$ objA, String objB) {
+			if (Object.ReferenceEquals(objA, null)) {
+				return Object.ReferenceEquals(objB, null);
+			}
+			else if (Object.ReferenceEquals(objB, null)) {
+				return false;
+			}
+
+#warning // TODO: Implement valid logic.
+			return String.Equals(objA._value, objB, StringComparison.OrdinalIgnoreCase);
+		}
+		/// <summary>
+		/// Returns a value indicating if the object specified is equal to this instance.
+		/// </summary>
+		/// <param name="obj">The object to compare to this instance.</param>
+		/// <returns><c>true</c> if the object specified is equal to this instance; otherwise, <c>false</c>.</returns>
+		public override Boolean Equals(Object obj) {
+			return this.Equals(obj as $className$) || this.Equals(obj as String);
+		}
+		/// <summary>
+		/// Returns a value indicating if the object specified is equal to this instance.
+		/// </summary>
+		/// <param name="other">The object to compare to this instance.</param>
+		/// <returns><c>true</c> if the object specified is equal to this instance; otherwise, <c>false</c>.</returns>
+		public Boolean Equals($className$ other) {
+			return $className$.AreEqual(this, other);
+		}
+		/// <summary>
+		/// Returns a value indicating if the object specified is equal to this instance.
+		/// </summary>
+		/// <param name="other">The object to compare to this instance.</param>
+		/// <returns><c>true</c> if the object specified is equal to this instance; otherwise, <c>false</c>.</returns>
+		public Boolean Equals(String other) {
+			return $className$.AreEqual(this, other);
+		}
+		/// <summary>
+		/// Returns a value that can serve as a hash code for this instance.
+		/// </summary>
+		/// <returns>The value that can serve as a hash code for this instance.</returns>
+		public override Int32 GetHashCode() {
+#warning // TODO: Implement valid logic.
+			return this._value.ToUpperInvariant().GetHashCode();
+		}
+		/// <summary>
+		/// Parses the string specified and returns an instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		/// <param name="value">The value to parse.</param>
+		/// <returns>A reference to the <see cref="T:$className$"/> created from <paramref name="value"/>.</returns>
+		/// <exception cref="System.ArgumentNullException"><paramref name="value"/> is a null reference.</exception>
+		/// <exception cref="System.FormatException"><paramref name="value"/> does not represent a valid <see cref="T:$className$"/> object.</exception>
+		public static $className$ Parse(String value) {
+			return $className$.Parse(value, true);
+		}
+		/// <summary>
+		/// Parses the string specified and returns an instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		/// <param name="value">The value to parse.</param>
+		/// <param name="throwOnError"><c>true</c> to throw an exception if <paramref name="value"/> is invalid; otherwise, <c>false</c>.</param>
+		/// <returns>A reference to the <see cref="T:$className$"/> created from <paramref name="value"/>.
+		/// -or- A null reference if <paramref name="value"/> is invalid and <paramref name="throwOnError"/> is <c>false</c>.</returns>
+		/// <exception cref="System.ArgumentNullException"><paramref name="value"/> is a null reference and <paramref name="throwOnError"/> is <c>true</c>.</exception>
+		/// <exception cref="System.FormatException"><paramref name="value"/> does not represent a valid <see cref="T:$className$"/> object and <paramref name="throwOnError"/> is <c>true</c>.</exception>
+		private static $className$ Parse(String value, Boolean throwOnError) {
+			if (value == null) {
+				if (throwOnError) {
+					throw new ArgumentNullException("value");
+				}
+				return null;
+			}
+
+#warning // TODO: Implement valid logic.
+			return new $className$(value);
+		}
+		/// <summary>
+		/// Returns the string representation of this instance.
+		/// </summary>
+		/// <returns>The string representation of this instance.</returns>
+		public override String ToString() {
+#warning // TODO: Implement valid logic.
+			return this._value;
+		}
+		/// <summary>
+		/// Attempts to parse the string specified and returns a value indicating if the operation was successful.
+		/// </summary>
+		/// <param name="value">The value to parse.</param>
+		/// <param name="result">When the method returns, this will contain the <see cref="T:$className$"/> created, or a null reference if the method returns <c>false</c>.</param>
+		/// <returns><c>true</c> if <paramref name="value"/> was parsed successfully; otherwise, <c>false</c>.</returns>
+		public static Boolean TryParse(String value, out $className$ result) {
+			result = $className$.Parse(value, false);
+			return result != null;
+		}
+
+	// Operators
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects are equal; otherwise, <c>false</c>.</returns>
+		public static Boolean operator ==($className$ objA, $className$ objB) {
+			return $className$.AreEqual(objA, objB);
+		}
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects are equal; otherwise, <c>false</c>.</returns>
+		public static Boolean operator ==($className$ objA, String objB) {
+			return $className$.AreEqual(objA, objB);
+		}
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects are equal; otherwise, <c>false</c>.</returns>
+		public static Boolean operator ==(String objA, $className$ objB) {
+			return $className$.AreEqual(objB, objA);
+		}
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are not equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects not are equal; otherwise, <c>false</c>.</returns>
+		public static Boolean operator !=($className$ objA, $className$ objB) {
+			return !$className$.AreEqual(objA, objB);
+		}
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are not equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects not are equal; otherwise, <c>false</c>.</returns>
+		public static Boolean operator !=($className$ objA, String objB) {
+			return !$className$.AreEqual(objA, objB);
+		}
+		/// <summary>
+		/// Returns a value indicating if the two objects specified are not equal.
+		/// </summary>
+		/// <param name="objA">The first object.</param>
+		/// <param name="objB">The second object.</param>
+		/// <returns><c>true</c> if the two objects not are equal; otherwise, <c>false</c>.</returns>
+		public static Boolean operator !=(String objA, $className$ objB) {
+			return !$className$.AreEqual(objB, objA);
+		}
+		/// <summary>
+		/// Implicitly converts the <see cref="T:$className$"/> specified to an instance of the <see cref="T:String"/> class.
+		/// </summary>
+		/// <param name="instance">The object to convert.</param>
+		/// <returns>The <see cref="T:String"/> object created, or a null reference if <paramref name="instance"/> is a null reference.</returns>
+		public static implicit operator String($className$ instance) {
+			if (instance == null) {
+				return null;
+			}
+
+#warning // TODO: Implement valid logic.
+			return instance._value;
+		}
+		/// <summary>
+		/// Explicitly converts the <see cref="T:String"/> specified to an instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		/// <param name="instance">The object to convert.</param>
+		/// <returns>The <see cref="T:$className$"/> object created, or a null reference if <paramref name="instance"/> is a null reference.</returns>
+		/// <exception cref="System.InvalidCastException"><paramref name="instance"/> is not valid for the <see cref="T:$className$"/> class.</exception>
+		public static explicit operator $className$(String instance) {
+			if (instance == null) {
+				return null;
+			}
+
+			$className$ value = $className$.Parse(instance, false);
+			if (value == null) {
+				throw new InvalidCastException();
+			}
+			return value;
+		}
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>TFS Custom Work Item Control</Title>
+			<Author>Chad E Greer</Author>
+			<Description>A template for custom TFS work item controls.</Description>
+			<Keywords>
+				<Keyword>TFS</Keyword>
+				<Keyword>WorkItem</Keyword>
+				<Keyword>Control</Keyword>
+			</Keywords>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal>
+					<ID>namespace</ID>
+					<Default>Vizistata.TeamFoundation</Default>
+					<ToolTip>Enter the namespace of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>description</ID>
+					<Default>Description...</Default>
+					<ToolTip>Enter the description of the class.</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>className</ID>
+					<Default>TeamFoundationControl</Default>
+					<ToolTip>Enter the name of the class.</ToolTip>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp"><![CDATA[using System;
+using System.Windows.Forms;
+using Microsoft.TeamFoundation.WorkItemTracking.Client;
+using Microsoft.TeamFoundation.WorkItemTracking.Controls;
+
+using StringDictionary = System.Collections.Specialized.StringDictionary;
+
+namespace $namespace$ {
+	/// <summary>
+	/// $description$  This class may not be inherited.
+	/// </summary>
+	public sealed partial class $className$ : UserControl, IWorkItemControl {
+	// Fields
+		/// <summary>
+		/// Represents the event handler delegates for the <see cref="E:IWorkItemControl.AfterUpdateDatasource"/> event.
+		/// </summary>
+		private EventHandler _afterUpdateDatasource;
+		/// <summary>
+		/// Represents the event handler delegates for the <see cref="E:IWorkItemControl.BeforeUpdateDatasource"/> event.
+		/// </summary>
+		private EventHandler _beforeUpdateDatasource;
+		/// <summary>
+		/// The name of the work item's field being read/modified by this instance, or a null reference.
+		/// </summary>
+		private String _fieldName;
+		/// <summary>
+		/// <c>true</c> if this instance is currently set to read-only; otherwise, <c>false</c>.
+		/// </summary>
+		private Boolean _isReadOnly;
+		/// <summary>
+		/// The collection of custom properties provided by the Team Foundation work item form, or a null reference.
+		/// </summary>
+		private StringDictionary _properties;
+		/// <summary>
+		/// The work item being modified, or a null reference.
+		/// </summary>
+		private WorkItem _workItem;
+
+	// Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:$className$"/> class.
+		/// </summary>
+		public $className$()
+			: base() {
+			this.InitializeComponent();
+#warning // TODO: Wire up event handlers on the Text/Value changed for the controls.  These event handlers should call UpdateWorkItemFieldValue().
+		}
+
+	// Properties
+		/// <summary>
+		/// Getes or sets a value indicating if the control is set to read-only.
+		/// </summary>
+		private Boolean IsReadOnly {
+			get { return this._isReadOnly; }
+			set {
+				this._isReadOnly = value;
+#warning // TODO: Update the control to be read-only.
+			}
+		}
+		/// <summary>
+		/// Getes or sets the custom properties used to format the control as provided by the work item form, or a null reference.
+		/// </summary>
+		private StringDictionary Properties {
+			get { return this._properties; }
+			set {
+				this._properties = value;
+#warning // TODO: Update the control from any properties.
+			}
+		}
+		/// <summary>
+		/// Gets the work item field to which this control is bound, or a null reference.
+		/// </summary>
+		private Field WorkItemField {
+			get {
+				if (this._workItem != null) {
+					if (this._fieldName != null) {
+						return this._workItem.Fields[this._fieldName];
+					}
+				}
+				return null;
+			}
+		}
+
+	// Methods
+		/// <summary>
+		/// Raises the <see cref="E:IWorkItemControl.AfterUpdateDatasource"/> event.
+		/// </summary>
+		/// <param name="e">Provides information about the event.</param>
+		private void OnAfterUpdateDatasource(EventArgs e) {
+			if (this._afterUpdateDatasource != null) {
+				this._afterUpdateDatasource(this, e);
+			}
+		}
+		/// <summary>
+		/// Raises the <see cref="E:IWorkItemControl.BeforeUpdateDatasource"/> event.
+		/// </summary>
+		/// <param name="e">Provides information about the event.</param>
+		private void OnBeforeUpdateDatasource(EventArgs e) {
+			if (this._beforeUpdateDatasource != null) {
+				this._beforeUpdateDatasource(this, e);
+			}
+		}
+		/// <summary>
+		/// Updates the control's value/text properties to match the current value in the work item's field.
+		/// </summary>
+		private void RefreshDisplayedValue() {
+			Field workItemField = this.WorkItemField;
+			if (workItemField != null) {
+#warning // TODO: Update the control's value/text to match the value from the WorkItem's Field.
+			}
+		}
+		/// <summary>
+		/// Resets the control's value/text properties to be empty or the default value.
+		/// </summary>
+		private void ResetDisplayedValue() {
+#warning // TODO: Reset the control's value/text to be empty or the default value.
+		}
+		/// <summary>
+		/// Updates the work item's field based on the value in the controls in this instance.
+		/// </summary>
+		private void UpdateWorkItemFieldValue() {
+			Field workItemField = this.WorkItemField;
+			if (workItemField != null) {
+				this.OnBeforeUpdateDatasource(EventArgs.Empty);
+#warning // TODO: Update the WorkItem's Field from the value in the control.
+				this.OnAfterUpdateDatasource(EventArgs.Empty);
+			}
+		}
+
+		#region IWorkItemControl Members (explicit)
+		StringDictionary IWorkItemControl.Properties {
+			get { return this.Properties; }
+			set { this.Properties = value; }
+		}
+		Boolean IWorkItemControl.ReadOnly {
+			get { return this.IsReadOnly; }
+			set { this.IsReadOnly = value; }
+		}
+		Object IWorkItemControl.WorkItemDatasource {
+			get { return this._workItem; }
+			set { this._workItem = value as WorkItem; }
+		}
+		String IWorkItemControl.WorkItemFieldName {
+			get { return this._fieldName; }
+			set { this._fieldName = value; }
+		}
+
+		event EventHandler IWorkItemControl.AfterUpdateDatasource {
+			add {
+				if (value == null) {
+					throw new ArgumentNullException("value");
+				}
+				this._afterUpdateDatasource = (EventHandler)Delegate.Combine(this._afterUpdateDatasource, value);
+			}
+			remove {
+				if (value == null) {
+					throw new ArgumentNullException("value");
+				}
+				this._afterUpdateDatasource = (EventHandler)Delegate.Remove(this._afterUpdateDatasource, value);
+			}
+		}
+		event EventHandler IWorkItemControl.BeforeUpdateDatasource {
+			add {
+				if (value == null) {
+					throw new ArgumentNullException("value");
+				}
+				this._beforeUpdateDatasource = (EventHandler)Delegate.Combine(this._beforeUpdateDatasource, value);
+			}
+			remove {
+				if (value == null) {
+					throw new ArgumentNullException("value");
+				}
+				this._beforeUpdateDatasource = (EventHandler)Delegate.Remove(this._beforeUpdateDatasource, value);
+			}
+		}
+
+		void IWorkItemControl.Clear() {
+			this.ResetDisplayedValue();
+		}
+		void IWorkItemControl.FlushToDatasource() {
+			this.UpdateWorkItemFieldValue();
+		}
+		void IWorkItemControl.InvalidateDatasource() {
+			this.RefreshDisplayedValue();
+		}
+		void IWorkItemControl.SetSite(IServiceProvider serviceProvider) {
+			/* Do nothing */
+		}
+		#endregion
+	}
+}
+]]></Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>

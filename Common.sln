@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{78FAD94F-E843-4706-B854-733FE15E46B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows.Forms", "Windows.Forms\Windows.Forms.csproj", "{B21BE791-DFBB-487A-9327-FCCA4EE4A9CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestTools", "TestTools\TestTools.csproj", "{9CB7D4EF-F15B-4A6F-9C89-D5C1E93C249D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Test", "Common.Test\Common.Test.csproj", "{7B5E3F09-FEAE-42F2-B872-6E8968312DA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{75BD033A-B816-4169-A376-781F9EADF91C}"
+	ProjectSection(SolutionItems) = preProject
+		Common.vsmdi = Common.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Snippets", "Snippets", "{2459B239-4139-4860-B013-E6BADC02A9B4}"
+	ProjectSection(SolutionItems) = preProject
+		Snippets\vizistata.expansions.snippet = Snippets\vizistata.expansions.snippet
+		Snippets\vizistata.files.snippet = Snippets\vizistata.files.snippet
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test Projects", "Test Projects", "{F70276C5-AC0F-49F5-A9F4-260440715710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceModel", "ServiceModel\ServiceModel.csproj", "{1A1065F9-9FA5-4003-8020-2FCC28472C7D}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Common.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78FAD94F-E843-4706-B854-733FE15E46B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78FAD94F-E843-4706-B854-733FE15E46B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78FAD94F-E843-4706-B854-733FE15E46B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78FAD94F-E843-4706-B854-733FE15E46B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B21BE791-DFBB-487A-9327-FCCA4EE4A9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21BE791-DFBB-487A-9327-FCCA4EE4A9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21BE791-DFBB-487A-9327-FCCA4EE4A9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21BE791-DFBB-487A-9327-FCCA4EE4A9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CB7D4EF-F15B-4A6F-9C89-D5C1E93C249D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CB7D4EF-F15B-4A6F-9C89-D5C1E93C249D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CB7D4EF-F15B-4A6F-9C89-D5C1E93C249D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CB7D4EF-F15B-4A6F-9C89-D5C1E93C249D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5E3F09-FEAE-42F2-B872-6E8968312DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5E3F09-FEAE-42F2-B872-6E8968312DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5E3F09-FEAE-42F2-B872-6E8968312DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5E3F09-FEAE-42F2-B872-6E8968312DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A1065F9-9FA5-4003-8020-2FCC28472C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1065F9-9FA5-4003-8020-2FCC28472C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1065F9-9FA5-4003-8020-2FCC28472C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1065F9-9FA5-4003-8020-2FCC28472C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B5E3F09-FEAE-42F2-B872-6E8968312DA7} = {F70276C5-AC0F-49F5-A9F4-260440715710}
+	EndGlobalSection
+EndGlobal
